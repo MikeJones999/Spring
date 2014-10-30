@@ -1,0 +1,5 @@
+package com.packt.webstore.repository.impl;
+
+public class InMemoryProductRepository {
+
+}

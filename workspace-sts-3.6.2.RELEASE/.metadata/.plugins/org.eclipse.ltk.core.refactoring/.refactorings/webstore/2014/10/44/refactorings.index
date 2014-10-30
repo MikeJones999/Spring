@@ -4,3 +4,6 @@
 1414533606102	Rename resource 'DefaultServlet-servlet.xml'
 1414533934391	Rename resource 'DispatcherServlet-servlet.xml'
 1414534009679	Move file
+1414708733626	Delete element
+1414708957649	Rename package 'com.packt.webstore.repository.impl'
+1414708972175	Rename package 'com.packt.webstore.repository'
