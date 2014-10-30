@@ -1,0 +1,20 @@
+package controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController 
+{
+	
+		@RequestMapping("/")
+		public String welcome(Model model)
+		{
+			model.addAttribute("greeting", "Welcome to Web Strore!");   //refers to the <h1> ${greeting} </h1> tag in welcome.jsp
+			model.addAttribute("tagline", "The One and Only amazing Web Store"); //refers to the <p> ${tagline} </p> tag in welcome.jsp
+			
+			return "welcome";
+		}
+		
+}

@@ -1,0 +1,3 @@
+INDEX VERSION 1.127
+C:\Users\mikieJ\Documents\workspace-sts-3.6.2.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\401724493.index
+\webstore\src\main\java
