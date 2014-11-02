@@ -1,5 +1,5 @@
 INDEX VERSION 1.127
-C:\Users\mikieJ\Documents\workspace-sts-3.6.2.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2895856095.index
+C:\Users\MikieJ Study\Documents\workspaceSpring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\401724493.index
 \webstore\src\main\java
-C:\Users\mikieJ\Documents\workspace-sts-3.6.2.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\401724493.index
+C:\Users\MikieJ Study\Documents\workspaceSpring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2895856095.index
 \webstore\src\main\java

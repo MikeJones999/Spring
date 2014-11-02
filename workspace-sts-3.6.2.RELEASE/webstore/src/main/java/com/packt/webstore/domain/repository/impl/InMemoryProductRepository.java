@@ -7,7 +7,19 @@ import org.springframework.stereotype.Repository;
 import com.packt.webstore.domain.Product;
 import com.packt.webstore.domain.repository.ProductRepository;
 
-
+/**
+ * This class is just a dummy, in-memory product repository.
+ *  It does not retrieve any real product domain object information from any database as such;
+ *  it just instantiates a list of product domain objects in its constructor
+ * @author MikieJ Study
+ *
+ * behaviour of a ProductRepository interface is to return a list of 
+ * product domain objects (getAllProducts), InMemoryProductRepository class 
+ * is just an implementation of this interface.
+ * 
+ * THIS CLASS SHOULD BE REPLACED WITH A CLASS THE RETRIEVES REAL DATA FROM A DATABASE
+ * 
+ */
 
 
 @Repository

@@ -23,8 +23,25 @@ import com.packt.webstore.domain.repository.ProductRepository;
 @Controller
 public class ProductController
 {
+	
+	/**
+	 * @Repository annotation on top of the InMemoryProductRepository class, 
+	 * allows Spring to know that if any reference of the type productRepository 
+	 * has an @Autowired annotation on top of it, then it should assign the 
+	 * implementation object InMemoryProductRepository to that reference
+	 */
+	
+	
+	
 	@Autowired
 	private ProductRepository productRepository;
+	/**
+	 * As soon as Spring sees the @Autowired annotation on top of the ProductRepository reference,
+	 *  it assigns the object of InMemoryProductRepository to this reference since 
+	 *  Spring already created and holds the InMemoryProductRepository object in its object 
+	 *  container (the web application context).
+	 * 
+	 */
 	
 	
 					//this mapping refers to the page Products

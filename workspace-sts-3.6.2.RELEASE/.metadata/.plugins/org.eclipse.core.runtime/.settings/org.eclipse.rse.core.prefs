@@ -1,3 +1,4 @@
+activeuserprofiles=MikieJStudy;Team;mikieJ-PC
 eclipse.preferences.version=1
-org.eclipse.rse.systemtype.local.systemType.defaultUserId=mikieJ
-useridperkey=mikieJ-PC.Local\=mikieJ;
+org.eclipse.rse.systemtype.local.systemType.defaultUserId=MikieJ Study
+useridperkey=mikieJ-PC.Local\=MikieJ Study;MikieJStudy.Local\=MikieJ Study;
