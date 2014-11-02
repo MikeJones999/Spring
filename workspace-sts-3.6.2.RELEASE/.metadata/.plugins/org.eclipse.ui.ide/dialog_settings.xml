@@ -141,6 +141,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\mikieJ\Documents\Spring\workspace-sts-3.6.2.RELEASE"/>
 			<item value="C:\Users\MikieJ Study\Documents\GitHub\Spring\workspace-sts-3.6.2.RELEASE"/>
 			<item value="C:\Users\MikieJ Study\Dropbox\Public\Msc Stuff\Networking Practice\Spring\workspace-sts-3.6.2.RELEASE"/>
 		</list>

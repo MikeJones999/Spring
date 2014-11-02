@@ -5,7 +5,247 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-10-29T12:25:00Z</updated>
+  <updated>2014-10-31T19:33:14Z</updated>
+  <entry>
+    <title>Spring Integration Java DSL 1.0 RC1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/10/31/spring-integration-java-dsl-1-0-rc1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2014-10-31:1805</id>
+    <updated>2014-10-31T19:33:14Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring community,&lt;/p&gt;
+
+&lt;p&gt;We are pleased to announce that soon after the
+&lt;a href="https://spring.io/blog/2014/10/27/spring-integration-4-1-rc1-released"&gt;Spring Integration 4.1 Release Candidate&lt;/a&gt;
+the Spring Integration Java DSL 1.0 Release Candidate is now available.
+Please use the &lt;a href="http://repo.springsource.org/milestone"&gt;Milestone Repository&lt;/a&gt; with Maven or Gradle,
+or download a
+&lt;a href="http://repo.spring.io/milestone/org/springframework/integration/spring-integration-java-dsl/1.0.0.RC1"&gt;distribution archive&lt;/a&gt;,
+to give it a spin.&lt;/p&gt;
+
+&lt;p&gt;See the project &lt;a href="https://github.com/spring-projects/spring-integration-extensions/wiki/Spring-Integration-Java-DSL-Reference"&gt;home page&lt;/a&gt;
+for more information.&lt;/p&gt;
+
+&lt;p&gt;The release includes many new features and improvements, as well as a number of bug fixes. The GA release
+is planned for the middle of November.&lt;/p&gt;
+
+&lt;p&gt;Here is a summary of major changes since the
+&lt;a href="https://spring.io/blog/2014/09/07/spring-integration-java-dsl-1-0-milestone-3-available"&gt;last milestone&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Refactoring and Breaking Changes&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;While still supporting earlier Java versions, the Spring Integration Java DSL is primarily positioned for Java 8 and its Lambda support.
+We have removed several
+&lt;code&gt;functional interfaces&lt;/code&gt; in favor of similar interfaces from Java 8: &lt;code&gt;Consumer&amp;lt;T&amp;gt;&lt;/code&gt;, &lt;code&gt;Function&amp;lt;T, R&amp;gt;&lt;/code&gt; etc. Of course, to support
+backward compatibility with older Java version we have implemented similar interfaces in the DSL source code. Users that
+are using the changed interfaces with with Java versions less than 8 will need to make changes to fix their compilation errors. For example:&lt;/p&gt;
+
+&lt;p&gt;From this:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;handle&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+        &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;EndpointConfigurer&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;GenericEndpointSpec&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ServiceActivatingHandler&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+                &lt;span class="nd"&gt;@Override&lt;/span&gt;
+                &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;accept&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GenericEndpointSpec&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ServiceActivatingHandler&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+                    &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;poller&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pollers&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;cron&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"7 * * * * ?"&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+                &lt;span class="o"&gt;}&lt;/span&gt;
+        &lt;span class="o"&gt;})&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To this:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;handle&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+        &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Consumer&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;GenericEndpointSpec&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ServiceActivatingHandler&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+                &lt;span class="nd"&gt;@Override&lt;/span&gt;
+                &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;accept&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GenericEndpointSpec&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ServiceActivatingHandler&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+                    &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;poller&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pollers&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;cron&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"7 * * * * ?"&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+                &lt;span class="o"&gt;}&lt;/span&gt;
+        &lt;span class="o"&gt;})&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Of course if you use a Java 8 Lambda here, the code will not require changes:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;handle&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;poller&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Pollers&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;cron&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"7 * * * * ?"&lt;/span&gt;&lt;span class="o"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;IntegrationFlows&lt;/code&gt; now contains only &lt;code&gt;from(...)&lt;/code&gt; methods. the &lt;code&gt;.fromFixedMessageChannel()&lt;/code&gt; has been replaced with
+&lt;code&gt;.from(String messageChannelName, boolean fixedSubscriber)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In addition, to fix some package tangle issues, we have moved some classes to different packages.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Method Scope Functions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To simplify the code completion from an IDE and allow avoiding redundant searches for a desired &lt;code&gt;Namespace Factory&lt;/code&gt; we
+added overloaded methods with &lt;code&gt;Function&amp;lt;T, R&amp;gt;&lt;/code&gt; argument. For example these code snippets are equal:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="o"&gt;.....&lt;/span&gt;
+&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;channel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Amqp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;pollableChannel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rabbitConnectionFactory&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+                            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;queueName&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"amqpReplyChannel"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+                            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;channelTransacted&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
+&lt;span class="o"&gt;....&lt;/span&gt;
+&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;channel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;amqpPollable&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rabbitConnectionFactory&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+                            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;queueName&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"amqpReplyChannel"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+                            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;channelTransacted&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
+&lt;span class="o"&gt;....&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Where the &lt;code&gt;c&lt;/code&gt; variable is the &lt;code&gt;Channel&lt;/code&gt;'s "method-aggregator" object, which delegates to the appropriate &lt;code&gt;Namespace Factory&lt;/code&gt;.
+Other similar Lambda methods are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;IntegrationFlows.from(MessageSourcesFunction sources)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IntegrationFlows.from(MessageProducersFunction producers)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IntegrationFlows.from(MessagingGatewaysFunction gateways)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IntegrationFlowDefinition.handleWithAdapter(Function&amp;lt;Adapters, MessageHandlerSpec&amp;lt;?, H&amp;gt;&amp;gt; adapters)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;EndpointSpec.poller(Function&amp;lt;PollerFactory, PollerSpec&amp;gt; pollers)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;FunctionExpression&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Spring Integration has amazing Spring Expression Language (SpEL) support. Since the Java DSL is
+pure (eh!) Java, it does not really make sense to specify some business logic in a long String for an &lt;code&gt;expression&lt;/code&gt; property.
+Being inspired by Java 8 Lambda support, and pursuing the aim of minimal changes
+we have introduced the &lt;code&gt;FunctionExpression&lt;/code&gt; - an implementation of the SpEL &lt;code&gt;Expression&lt;/code&gt; interface - which accepts a
+&lt;code&gt;Function&amp;lt;T, R&amp;gt;&lt;/code&gt; and delegates to it on the each &lt;code&gt;getValue()&lt;/code&gt;. Now, many components in the DSL provide
+&lt;code&gt;(Function&amp;lt;T, R&amp;gt; function)&lt;/code&gt; methods as an alternative to the similar SpEL method. Here is an example for the &lt;code&gt;localFilename&lt;/code&gt;
+property for the &lt;code&gt;FtpInboundFileSynchronizingMessageSource&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;With SpEL:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Bean&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="nf"&gt;ftpInboundFlow&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;IntegrationFlows&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;from&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ftp&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ftpSessionFactory&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+                            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;remoteDirectory&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"ftpSource"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+                            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;localFilenameExpression&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"payload.toUpperCase() + '.a'"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;channel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;queue&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"ftpInboundResultChannel"&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;get&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With Lambda:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Bean&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="nf"&gt;ftpInboundFlow&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;IntegrationFlows&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;from&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ftp&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ftpSessionFactory&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+                            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;remoteDirectory&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"ftpSource"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+                            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;localFilename&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;toUpperCase&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;".a"&lt;/span&gt;&lt;span class="o"&gt;)))&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;channel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;queue&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"ftpInboundResultChannel"&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;get&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Other interesting uses of the &lt;code&gt;FunctionExpression&lt;/code&gt; are the &lt;code&gt;Enricher&lt;/code&gt; and &lt;code&gt;HeaderEnricher&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;enrich&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;requestChannel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"enrichChannel"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;requestPayload&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nl"&gt;Message:&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;getPayload&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;propertyFunction&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"date"&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nf"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;()))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;FunctionExpression&lt;/code&gt; also supports runtime type conversion as is done in the standard &lt;code&gt;SpelExpression&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SubFlows&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We have introduced &lt;code&gt;SubFlow&lt;/code&gt; support for some &lt;code&gt;if...else&lt;/code&gt; and &lt;code&gt;publish-subscribe&lt;/code&gt; components. The simplest
+example is &lt;code&gt;.publishSubscribeChannel()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Bean&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="nf"&gt;subscribersFlow&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;flow&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;flow&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;publishSubscribeChannel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Executors&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;newCachedThreadPool&lt;/span&gt;&lt;span class="o"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;
+                    &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;subscribe&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;
+                            &lt;span class="o"&gt;.&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;handle&lt;/span&gt;&lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+                            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;channel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;queue&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"subscriber1Results"&lt;/span&gt;&lt;span class="o"&gt;)))&lt;/span&gt;
+                    &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;subscribe&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;
+                            &lt;span class="o"&gt;.&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;handle&lt;/span&gt;&lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+                            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;channel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;queue&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"subscriber2Results"&lt;/span&gt;&lt;span class="o"&gt;))))&lt;/span&gt;
+            &lt;span class="o"&gt;.&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;handle&lt;/span&gt;&lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;channel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;queue&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"subscriber3Results"&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Of course the same result we can be achieved with separate &lt;code&gt;IntegrationFlow&lt;/code&gt; &lt;code&gt;@Bean&lt;/code&gt; definitions, but we hope you'll
+find the subflow style of logic composition useful.&lt;/p&gt;
+
+&lt;p&gt;Similar &lt;code&gt;publish-subscribe&lt;/code&gt; subflow composition is provided by &lt;code&gt;.routeToRecipients()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Another example is &lt;code&gt;.discardFlow()&lt;/code&gt; instead of &lt;code&gt;.discardChannel()&lt;/code&gt; on &lt;code&gt;.filter()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.route()&lt;/code&gt; deserves special attention:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Bean&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="nf"&gt;routeFlow&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;
+            &lt;span class="o"&gt;.&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;route&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+                    &lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;channelMapping&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"true"&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"evenChannel"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+                            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;subFlowMapping&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"false"&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sf&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;
+                                    &lt;span class="n"&gt;sf&lt;/span&gt;&lt;span class="o"&gt;.&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;handle&lt;/span&gt;&lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)))&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;transform&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nl"&gt;Object:&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;toString&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;channel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;queue&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"oddChannel"&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;.channelMapping()&lt;/code&gt; continues to work as in regular &lt;code&gt;Router&lt;/code&gt; mapping, but the &lt;code&gt;.subFlowMapping()&lt;/code&gt; tied that
+subflow with main flow. In other words, any router's subflow returns to the main flow after &lt;code&gt;.route()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Similar "return-to-main-flow" subflow is supported by &lt;code&gt;.gateway()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Bean&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="nf"&gt;gatewayFlow&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; 
+                   &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;gateway&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"gatewayRequest"&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;g&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;errorChannel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"gatewayError"&lt;/span&gt;&lt;span class="o"&gt;).&lt;/span&gt;&lt;span class="na"&gt;replyTimeout&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10L&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
+            &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;gateway&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gf&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;gf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;transform&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"From Gateway SubFlow: "&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;concat&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;However this Gateway SubFlow is just wired with main flow through the explicit &lt;code&gt;DirectChannel&lt;/code&gt; and wrapped to
+the regular &lt;code&gt;GatewayMessageHandler&lt;/code&gt; using that channel as a &lt;code&gt;requestChannel&lt;/code&gt; option.&lt;/p&gt;
+
+&lt;p&gt;Of course, subflows can be nested with any depth, but we don't recommend to do that because, in fact, even in the
+router case, adding complex subflows within a flow would quickly begin to be
+difficult for a human to parse.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We haven't added more &lt;code&gt;protocol specific adapters&lt;/code&gt; since the last milestone. Not all adapters will be supported directly by the DSL
+although the most commonly used ones have first class support.
+However, those that don't have first class support can easily be wired in using &lt;code&gt;.handle()&lt;/code&gt;. As we have discussed previously,
+we are looking for input to prioritize the implementations of the remaining adapters
+so, don't be shy to share your thoughts and ideas!&lt;/p&gt;
+
+&lt;p&gt;You can obtain more information about these and existing classes from their
+&lt;a href="https://github.com/spring-projects/spring-integration-extensions/tree/master/spring-integration-java-dsl"&gt;source code&lt;/a&gt;
+and from &lt;a href="https://github.com/spring-projects/spring-integration-extensions/wiki/Spring-Integration-Java-DSL-Reference"&gt;Reference Manual&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We look forward to your comments and feedback (&lt;a href="http://stackoverflow.com"&gt;StackOverflow&lt;/a&gt; (&lt;code&gt;spring-integration&lt;/code&gt; tag),
+&lt;a href="https://jira.spring.io/browse/INTEXT"&gt;Spring JIRA&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-integration-extensions/issues"&gt;GitHub&lt;/a&gt;)
+as soon as possible and report issues you find before we GA towards over a couple weeks.&lt;/p&gt;
+
+&lt;p&gt;As always, we very much welcome &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.md"&gt;contributions&lt;/a&gt;.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Webinar Replay: Content-enabled Web and Mobile Applications with Spring, Groovy and Crafter</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/10/30/webinar-replay-content-enabled-web-and-mobile-applications-with-spring-groovy-and-crafter" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2014-10-30:1804</id>
+    <updated>2014-10-30T14:49:00Z</updated>
+    <content type="html">&lt;p&gt;Conquering Content-enabled Web and Mobile Applications with Spring and Groovy&lt;/p&gt;
+
+&lt;p&gt;Speaker: Russ Danner - Crafter Software &lt;/p&gt;
+
+&lt;p&gt; Rich media and digital content are an integral part of nearly all Web and mobile applications today, but the growing number of platforms, changing business demands and time to market are a major concern. Join this session to learn modern practices for building content-enabled Web and mobile apps. We will uncover common challenges faced by content and application teams, explain how these problems are solved by simple, powerful tools and the right architecture. We'll also demonstrate how leading organizations such as AT&amp;amp;T, Marriott, and Harvard Business Publishing have succeeded by leveraging Spring Framework, Groovy and other leading Java development technologies along with content management frameworks to build and manage content rich applications.&lt;/p&gt;
+
+&lt;p&gt;Learn more about Crafter Software &lt;a href="http://www.craftersoftware.com"&gt;http://www.craftersoftware.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;iframe width="420" height="315" src="//www.youtube.com/embed/KTClU47MGdI" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
   <entry>
     <title>Pivotal at Spring eXchange 2014 in London, UK</title>
     <link rel="alternate" href="https://spring.io/blog/2014/10/29/pivotal-at-spring-exchange-2014-in-london-uk" />
@@ -1308,150 +1548,6 @@ Both tool suites ship on top of the latest Eclipse Luna 4.4 SR1 release as 64bit
 &lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;Save the date for SpringOne2GX 2015!  We hope you will mark your calendar and join  us again! SpringOne2GX 2015 will be held September 14 - 17, 2015 at the  Marriott Marquis in Washington DC.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring  - October 7th, 2014</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/10/08/this-week-in-spring-october-7th-2014" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2014-10-08:1783</id>
-    <updated>2014-10-08T03:49:00Z</updated>
-    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;!  This week, I've been at the Couchbase Connect conference talking to developers about Spring Data Couchbase (and Spring Boot, Spring XD, Spring Session, and more..). Fun show, fun crowd! Next week, I'll be at &lt;a href="http://jaxlondon.com/2014/speakers/josh-long"&gt;JAX London&lt;/a&gt; and &lt;a href="http://uk.geekout.ee/speakers/josh-long/"&gt;Geekout UK&lt;/a&gt;, so be sure to say hi if you're around. &lt;/p&gt;
-
-&lt;p&gt;Now, with that, let's get on to the roundup..&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;The good Dr. Pollack just announced &lt;a href="http://spring.io/blog/2014/10/02/spring-xd-1-0-1-released"&gt;the 1.0.1 release of Spring XD&lt;/a&gt;, the easiest way to build data-integration and ingestion solutions. It may be only a 1.0.1 release, but make no mistake: there are some very cool features in this release, including improved administrative and administrative UI features. &lt;/li&gt;
-&lt;li&gt;Federated security is an important part of any distributed, multi-client, (micro)service-oriented system. Spring Security and Spring Security OAuth, in particular, provide a compelling solution. Join the good Dr. Dave Syer for this &lt;a href="https://spring.io/blog/2014/10/01/webinar-security-for-microservices-with-spring-and-oauth2"&gt;upcoming webinar on microservice security using OAuth2&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;Matt Stine will be doing a webinar introducing &lt;a href="https://spring.io/blog/2014/10/01/webinar-architecting-for-continuous-delivery-microservices-with-pivotal-cf-and-spring-cloud"&gt;how Pivotal Cloud Foundry and Spring Cloud make for a natural solution to building microservices&lt;/a&gt;. Don't miss this one!&lt;/li&gt;
-&lt;li&gt; Spring and JavaScript ninja  Brian Cavalier has written a &lt;em&gt;very&lt;/em&gt;  interesting post on some of &lt;a href="http://github.com/spring-projects/spring-sync/"&gt;the work&lt;/a&gt; we're doing towards enabling &lt;a href="http://spring.io/blog/2014/10/08/streaming-json-patch-from-spring-to-a-react-ui"&gt;easier differential sync between JavaScript clients and services&lt;/a&gt;. This post not only introduces all these exciting new stuff, but also builds on RaveJS, the Spring Boot-inspired approach to JavaScript.&lt;/li&gt;
-&lt;li&gt;I hope you'll join the Vaadin team and I on October 23rd for a &lt;a href="http://spring.io/blog/2014/10/01/webinar-building-bootful-uis-with-spring-boot-and-vaadin"&gt;look how to build Spring Boot-powered Vaadin applications&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Justin Lee Grant has put together &lt;a href="http://www.justinleegrant.com/?p=489"&gt;a good introductory look at Spring Boot&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Spring lead Juergen Hoeller just &lt;a href="http://spring.io/blog/2014/10/01/spring-framework-4-1-1-released"&gt;announced the 4.1.1  release of Spring framework&lt;/a&gt;. This release includes improved &lt;code&gt;Optional&lt;/code&gt; handling, a Jackson &lt;code&gt;ObjectMapper&lt;/code&gt; builder, some requested JDBC improvements, and much more. &lt;/li&gt;
-&lt;li&gt;The good Dr. Syer just announced &lt;a href="http://spring.io/blog/2014/10/07/spring-cloud-1-0-0-m1-available-now"&gt;the first milestone release of the Spring Cloud project&lt;/a&gt;. Spring Cloud provides primatives for building microservice and PaaS-centric applications. It builds on top of the Netflix OSS stack and Spring Boot.&lt;/li&gt;
-&lt;li&gt;Karthik Abram put together &lt;a href="http://www.eclecticlogic.com/2014/09/01/classpath-scanning/"&gt;a nice post on a hidden gem in Spring: the &lt;code&gt;ClassPathScanningCandidateComponentProvider&lt;/code&gt;&lt;/a&gt; class, which makes it easy to discover beans of a certain type. &lt;/li&gt;
-&lt;li&gt;Nicolas Lejeune has written up a fascinating look at how he managed &lt;a href="http://labs.bsb.com/2014/09/turn-a-legacy-app-into-a-cf-service/"&gt;to convert a legacy application (it uses EJB3) and move it to a Cloud Foundry environment&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;Our pal Toshiaki Maki put together &lt;a href="http://github.com/making/spring-boot-blank"&gt;his ideal Spring Boot Maven archetype&lt;/a&gt;, and &lt;a href="http://twitter.com/making/status/519626091934134272"&gt;shared it&lt;/a&gt;!&lt;br&gt;
-&lt;/li&gt;
-&lt;li&gt;Are you a Groovy fan? (who isn't??) Check out Groovy project lead Guillaume LaForge's weekly roundup, &lt;a href="http://t.co/AiDLC6novd"&gt;&lt;em&gt;This Week in Groovy&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-&lt;li&gt;Do you want &lt;a href="http://mikusa.blogspot.com/2014/08/debugging-java-applications-on.html"&gt;to debug applications deployed on Cloud Foundry&lt;/a&gt;? Daniel Mikusa put together a very nice post explaining one approach. &lt;/li&gt;
-&lt;/ol&gt;</content>
-  </entry>
-  <entry>
-    <title>Streaming JSON Patch from Spring to a React UI</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/10/08/streaming-json-patch-from-spring-to-a-react-ui" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Brian Cavalier</name>
-    </author>
-    <id>tag:spring.io,2014-10-07:1782</id>
-    <updated>2014-10-08T01:47:03Z</updated>
-    <content type="html">&lt;p&gt;We're exploring ways to help developers create rich, modern front-ends that integrate easily with Spring back-ends.  If you attended SpringOne this year, you've already seen some of the things we've been working on:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;
-&lt;a href="https://speakerdeck.com/gregturn/springone2gx-2014-spring-data-rest-data-meets-hypermedia"&gt;Hypermedia support in Spring Data REST&lt;/a&gt; presented by Greg Turnquist, Oliver Gierke, and Roy Clarkson&lt;/li&gt;
-&lt;li&gt;
-&lt;a href="http://www.slideshare.net/unscriptable/rave-js-springone-2gx-2014"&gt;RaveJS: Spring Boot concepts for JavaScript applications&lt;/a&gt; by John Hann&lt;/li&gt;
-&lt;li&gt;
-&lt;a href="http://www.slideshare.net/briancavalier/differential-sync-and-json-patch-s2-gx-2014"&gt;Differential Synchronization and JSON Patch&lt;/a&gt; by Craig Walls and me&lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;In short, We want to make it easy to communicate efficiently between a Spring back-end and a client and to easily integrate the best and most popular client-side technologies.&lt;/p&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-react--streaming-updates" class="anchor" href="#react--streaming-updates" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;React + streaming updates&lt;/h2&gt;
-
-&lt;p&gt;JSON Patch is a format for sending incremental changes to structured data.  I thought it would be interesting to try streaming updates in JSON Patch format via STOMP all the way out to a web UI.&lt;/p&gt;
-
-&lt;p&gt;Craig Walls had already built a simple &lt;a href="https://github.com/habuma/scores"&gt;football scores proof of concept&lt;/a&gt;, using the new &lt;a href="https://github.com/spring-projects/spring-sync/"&gt;Spring Sync&lt;/a&gt; project to push score updates to a browser using JSON Patch over STOMP.  I was able to take his POC, drop in RaveJS, add client-side reactive streams, and integrate the updates into a &lt;a href="http://facebook.github.io/react/"&gt;React&lt;/a&gt; UI component.&lt;/p&gt;
-
-&lt;p&gt;You can find the &lt;a href="https://github.com/briancavalier/scores"&gt;complete code on github in my rave-most-react branch&lt;/a&gt;.  The server is unchanged from Craig's original version.  The &lt;a href="https://github.com/briancavalier/scores/tree/rave-most-react/src/main/resources/public"&gt;web client&lt;/a&gt; is where the action is.  Have a look at the &lt;a href="https://github.com/briancavalier/scores/blob/rave-most-react/src/main/resources/public/main.js"&gt;main.js to get an overall sense of the app&lt;/a&gt; before we dive into some specifics.&lt;/p&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-starting-out" class="anchor" href="#starting-out" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Starting out&lt;/h2&gt;
-
-&lt;p&gt;I used &lt;a href="https://github.com/RaveJS/rave"&gt;RaveJS&lt;/a&gt; and npm to manage my client side dependencies, so my startup was simple:&lt;/p&gt;
-
-&lt;div class="highlight highlight-sh"&gt;&lt;pre&gt;&amp;gt; &lt;span class="nb"&gt;cd &lt;/span&gt;src/main/resources/public
-
-&amp;gt; npm init
-
-&amp;lt;answer a few questions&amp;gt;
-
-&amp;gt; npm install --save rave most jiff react rave-load-jsx rave-node-process stompjs
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Then I just needed a single script tag in the existing HTML, and I was off to coding!&lt;/p&gt;
-
-&lt;div class="highlight highlight-html"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;"node_modules/rave/rave.js"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-introducing-mostjs" class="anchor" href="#introducing-mostjs" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Introducing most.js&lt;/h2&gt;
-
-&lt;p&gt;Thanks to Craig, I already had a stream of updates (in JSON Patch format) flowing to the client over STOMP.  I decided that the nicest way to work with the stream of patches would be to (surprise!) &lt;em&gt;actually use a stream&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://github.com/cujojs/most"&gt;Most.js&lt;/a&gt; is cujoJS's new JavaScript reactive streams package.  It provides a small, but powerful set of APIs for creating, transforming, and consuming event streams.  I used it to wrap up the stompjs API.&lt;/p&gt;
-
-&lt;p&gt;It turns out that there were two STOMP subscriptions: one that carried an initial, complete copy of all the score data, and another that carried all the subsequent changes.  I was able to wrap both subscriptions up into a single reactive stream representing "the latest set of scores" by using &lt;a href="https://github.com/cujojs/jiff"&gt;jiff.js&lt;/a&gt; to apply the JSON Patches as they arrived.&lt;/p&gt;
-
-&lt;p&gt;This bit of code creates a stream from a STOMP subscription to the initial data, takes the first event (a complete snapshot of all scores), and combines it with a second stream containing only JSON Patch updates to produce a view of the scores that changes over time.&lt;/p&gt;
-
-&lt;div class="highlight highlight-js"&gt;&lt;pre&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;getScoresStream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;initDestination&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;updateDestination&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;client&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="c1"&gt;// Create a stream containing one full copy of the data, and&lt;/span&gt;
-    &lt;span class="c1"&gt;// flatMap that to a stream containing the time-varying&lt;/span&gt;
-    &lt;span class="c1"&gt;// current set of scores, by accumulating each patch&lt;/span&gt;
-    &lt;span class="c1"&gt;// and emitting the updated scores data.&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;getInitialDataStream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;initDestination&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;client&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;flatMap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;getUpdatesStream&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;updateDestination&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;client&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="p"&gt;});&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;getInitialDataStream&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;initDestination&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;client&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="c1"&gt;// Await a copy of the data from the STOMP subscription&lt;/span&gt;
-    &lt;span class="c1"&gt;// that is sending the full scores data, then unsubscribe.&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;streamFromStompJson&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;initDestination&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;client&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;take&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;getUpdatesStream&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;updateDestination&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;client&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="c1"&gt;// Incrementally accumulate patches from the STOMP subscription&lt;/span&gt;
-    &lt;span class="c1"&gt;// that is carrying JSON Patches onto the scores data to produce&lt;/span&gt;
-    &lt;span class="c1"&gt;// an updated view of the scores.&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;streamFromStompJson&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;updateDestination&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;client&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;startWith&lt;/span&gt;&lt;span class="p"&gt;([])&lt;/span&gt;
-        &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;scan&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;updateWithJsonPatch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Most.js also automatically cleans up underlying resources when streams end.  It was easy to arrange to unsubscribe from the first subscription after an initial copy of the full scores data had arrived, leaving only one subscription: the changes.&lt;/p&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-making-the-ui-with-react" class="anchor" href="#making-the-ui-with-react" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Making the UI with React&lt;/h2&gt;
-
-&lt;p&gt;Now that I had a single most.js stream representing the latest scores, I created a &lt;a href="https://github.com/briancavalier/scores/blob/rave-most-react/src/main/resources/public/Scoreboard.jsx"&gt;React component to display them&lt;/a&gt;.  I installed (see above) the &lt;a href="https://github.com/KidkArolis/rave-load-jsx"&gt;rave-load-jsx extension&lt;/a&gt;, a RaveJS extension created by a community member, which enables direct JSX component loading in RaveJS.  All I had to do was create a Scoreboard.jsx file and start coding a simple React scoreboard component.&lt;/p&gt;
-
-&lt;p&gt;React components have an internal &lt;code&gt;state&lt;/code&gt; object containing the data that will be used to render the component.  All I needed to do was pass the latest scores stream when creating the component, and then have the component observe the stream and update its &lt;code&gt;state&lt;/code&gt;.  The relevant bit of code is only a couple lines:&lt;/p&gt;
-
-&lt;div class="highlight highlight-js"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// this.props.scores is the scores stream provided when the&lt;/span&gt;
-&lt;span class="c1"&gt;// Scoreboard component is created&lt;/span&gt;
-
-&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;props&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;scores&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;observe&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;scores&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setState&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt; &lt;span class="nx"&gt;scores&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;scores&lt;/span&gt; &lt;span class="p"&gt;});&lt;/span&gt;
-&lt;span class="p"&gt;});&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;React took care of automatically keeping the DOM in sync with the &lt;code&gt;state&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-from-bits-to-pixels" class="anchor" href="#from-bits-to-pixels" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;From bits to pixels&lt;/h2&gt;
-
-&lt;p&gt;This is admittedly a toy app.  However, it shows quite a few powerful concepts working together in a very small space, with very little code: small, server-generated deltas flowing over STOMP + WebSocket, to a reactive stream on the client being observed by a React component.  Changes are flowing from a Spring back-end through to the UI--bits to pixels, as it were.&lt;/p&gt;
-
-&lt;p&gt;I hope this tiny app also provides a glimpse at the direction we're headed.  We want to provide tools and client-side packages that help developers build rich, modern client applications that integrate with leading client-side technologies and Spring back-ends.&lt;/p&gt;</content>
   </entry>
 </feed>
 

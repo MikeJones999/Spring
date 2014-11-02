@@ -2,6 +2,9 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.packt.webstore.domain.Product"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="com.packt.webstore.domain.repository.ProductRepository"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.packt.webstore.service.OrderService"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
 </qualifiedTypeNameHistroy>

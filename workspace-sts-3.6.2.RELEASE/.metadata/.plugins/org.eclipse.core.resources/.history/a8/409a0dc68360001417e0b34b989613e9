@@ -1,0 +1,20 @@
+package com.packt.webstore.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import com.packt.webstore.domain.Product;
+
+
+/**
+ * Controls the products that will be displayed on the webpage - most likely a connection to the Database for such a thing
+ * @author mikieJ
+ *
+ */
+
+public class ProductController
+{
+
+}
+
+

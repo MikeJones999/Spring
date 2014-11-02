@@ -18,6 +18,6 @@ public interface ProductRepository
 	 * @param productID
 	 * @return
 	 */
-	Product getProductById(String productID);
+	Product getProductById(String productId);
 	
 }

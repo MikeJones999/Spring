@@ -2,11 +2,11 @@
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
 		<item value="195" key="DIALOG_X_ORIGIN"/>
-		<item value="-33" key="DIALOG_Y_ORIGIN"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="625" key="dialogHeight"/>
-		<item value="1080" key="dialogWidth"/>
+		<item value="790" key="dialogHeight"/>
+		<item value="1440" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -20,6 +20,7 @@
 		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.egit.ui.internal.clone.gitclonecategory"/>
 			<item value="org.springsource.ide.eclipse.gettingstarted.wizards.import.category"/>
 		</list>
 	</section>
