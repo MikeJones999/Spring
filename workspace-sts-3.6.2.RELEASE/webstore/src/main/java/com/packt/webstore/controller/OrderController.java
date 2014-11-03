@@ -19,7 +19,7 @@ public class OrderController
 	{
 		orderService.processOrder("P1234", 2);
 		//return the to products page...
-		return "redirect:/product";
+		return "redirect:/products";
 	}
 	
 }

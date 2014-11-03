@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.packt.webstore.domain.Product;
 import com.packt.webstore.domain.repository.ProductRepository;
+import com.packt.webstore.service.ProductService;
 
 
 /**
@@ -34,7 +35,10 @@ public class ProductController
 	
 	
 	@Autowired
-	private ProductRepository productRepository;
+	//private ProductRepository productRepository;
+	
+	//now interacts with service layer
+	private ProductService productService;
 	/**
 	 * As soon as Spring sees the @Autowired annotation on top of the ProductRepository reference,
 	 *  it assigns the object of InMemoryProductRepository to this reference since 
@@ -49,8 +53,8 @@ public class ProductController
 	public String list(Model model)
 	{
 		
-		model.addAttribute("products", productRepository.getAllProducts());
-		
+		//model.addAttribute("products", productRepository.getAllProducts());
+		model.addAttribute("products", productService.getAllProducts());
 		return "products";
 	}
 	

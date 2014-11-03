@@ -5,7 +5,85 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-10-31T19:33:14Z</updated>
+  <updated>2014-11-03T13:08:00Z</updated>
+  <entry>
+    <title>Spring Data Evans SR1 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/03/spring-data-evans-sr1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Christoph Strobl</name>
+    </author>
+    <id>tag:spring.io,2014-11-03:1807</id>
+    <updated>2014-11-03T13:08:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Data team I am pleased to announce the availability of the first service release of the Evans release train. The team around the participating modules completed &lt;a href="http://jira.spring.io/issues/?filter=14836"&gt;41 issues&lt;/a&gt; including serveral bug fixes. We want to thank everyone for taking the time to report, volunteer fixing and testing those issues - this is invaluable feedback we could not do without!&lt;/p&gt;
+
+&lt;p&gt;The release includes the following 11 modules:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Spring Data Commons 1.9.1 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/1.9.1.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.9.1.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.9.1.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.9.1.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data JPA 1.7.1 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/1.7.1.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.7.1.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.7.1.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.7.1.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data MongoDB 1.6.1 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/1.6.1.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.6.1.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.6.1.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.6.1.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Neo4j 3.2.1 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/3.2.1.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.2.1.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.2.1.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.2.1.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Solr 1.3.1 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/1.3.1.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.3.1.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.3.1.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.3.1.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Couchbase 1.2.1 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/1.2.1.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/1.2.1.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/1.2.1.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/1.2.1.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Cassandra 1.1.1 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-cassandra/1.1.1.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.1.1.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.1.1.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.1.1.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Elasticsearch 1.1.1 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/1.1.1.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/1.1.1.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/1.1.1.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/1.1.1.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Gemfire 1.5.1 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-gemfire/1.5.1.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.5.1.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.5.1.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.5.1.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Redis 1.4.1 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-redis/1.4.1.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.4.1.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.4.1.RELEASE/reference/pdf/spring-data-redis-reference.pdf"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.4.1.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data REST 2.2.1 - &lt;a href="http://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/2.2.1.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.2.1.RELEASE/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.2.1.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.2.1.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Evans SR 1 is a recommended upgrade as it contains important bug fixes. Dijkstra users still on a service release are encouraged to upgrade as well. The next release coming will be the first milestone of release train &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Fowler"&gt;Fowler&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;In case you happen to be in London this week, don't miss the oportunity to meet us at &lt;a href="https://skillsmatter.com/conferences/1941-spring-exchange-2014"&gt;Spring eXchange 2014&lt;/a&gt;.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring for Apache Hadoop 2.0.3 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/03/spring-for-apache-hadoop-2-0-3-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Thomas Risberg</name>
+    </author>
+    <id>tag:spring.io,2014-10-31:1806</id>
+    <updated>2014-11-03T10:36:00Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce that Spring for Apache Hadoop 2.0.3 has just been released and is now available from Maven Central and the Spring Repository. This release includes some bug fixes and updates some dependency versions. The dependencies are updated to match the next 1.0.3 release of the Spring IO platform. More details can be found in the &lt;a href="http://docs.spring.io/spring-hadoop/docs/2.0.3.RELEASE/changelog.txt"&gt;changelog&lt;/a&gt; or in the &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10801&amp;amp;version=14702"&gt;JIRA release notes&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In this release, we are adding support for Apache Hadoop 2.5.1 (hadoop25) and Pivotal HD 2.1 (phd21). &lt;/p&gt;
+
+&lt;p&gt;Here is a complete list of the latest version designation to use for the various  distro "flavors" published. The Apache Hadoop releases are available in Maven Central and all other releases are available in the &lt;a href="http://repo.spring.io/libs-release/"&gt;Spring Repository&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2.0.3.RELEASE - Apache Hadoop 2.2.x [2.2.0]&lt;/li&gt;
+&lt;li&gt;2.0.3.RELEASE-hadoop12 - Apache Hadoop 1.2.x [1.2.1]&lt;/li&gt;
+&lt;li&gt;2.0.3.RELEASE-hadoop24 - Apache Hadoop 2.4.x [2.4.1]&lt;/li&gt;
+&lt;li&gt;2.0.3.RELEASE-hadoop25 - Apache Hadoop 2.5.x [2.5.1]&lt;/li&gt;
+&lt;li&gt;2.0.3.RELEASE-phd1 - Pivotal HD 1.0 [2.0.5-alpha-gphd-2.1.0.0]&lt;/li&gt;
+&lt;li&gt;2.0.3.RELEASE-phd20 - Pivotal HD 2.0 [2.2.0-gphd-3.0.1.0]&lt;/li&gt;
+&lt;li&gt;2.0.3.RELEASE-phd21 - Pivotal HD 2.1 [2.2.0-gphd-3.1.0.0]&lt;/li&gt;
+&lt;li&gt;2.0.3.RELEASE-cdh4 - Cloudera CDH4 MR1 [2.0.0-mr1-cdh4.6.0]&lt;/li&gt;
+&lt;li&gt;2.0.3.RELEASE-cdh5 - Cloudera CDH5 YARN [2.3.0-cdh5.1.3]&lt;/li&gt;
+&lt;li&gt;2.0.3.RELEASE-hdp13 - Hortonworks Data Platform 1.3 [1.2.0]&lt;/li&gt;
+&lt;li&gt;2.0.3.RELEASE-hdp20 - Hortonworks Data Platform 2.0 [2.2.0]&lt;/li&gt;
+&lt;li&gt;2.0.3.RELEASE-hdp21 - Hortonworks Data Platform 2.1 [2.4.0]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We plan on adding support for Apache Hadoop 2.6, Hortonworks HDP 2.2 and Cloudera CDH 5.2 in a future release.&lt;/p&gt;
+
+&lt;p&gt;The project page is at - &lt;a href="http://projects.spring.io/spring-hadoop/"&gt;http://projects.spring.io/spring-hadoop/&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Integration Java DSL 1.0 RC1 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2014/10/31/spring-integration-java-dsl-1-0-rc1-released" />
@@ -1467,87 +1545,6 @@ Both tool suites ship on top of the latest Eclipse Luna 4.4 SR1 release as 64bit
 &lt;p&gt;For a complete list of changes, and for upgrade instructions, see the &lt;a href="http://github.com/spring-projects/spring-boot/wiki/Spring-Boot-1.2-Release-Notes"&gt;Spring Boot 1.2 Release Notes&lt;/a&gt; on the WIKI. The &lt;a href="http://docs.spring.io/spring-boot/docs/1.2.0.M2/reference/htmlsingle/"&gt;reference documentation&lt;/a&gt; also continues to be updated to cover the new features.&lt;/p&gt;
 
 &lt;p&gt;Thanks again to everyone that has contributed to the release! Please give it a go and report any problems using &lt;a href="http://github.com/spring-projects/spring-boot/issues"&gt;the project Issue tracker&lt;/a&gt; page.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 1.1.8 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/10/11/spring-boot-1-1-8-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Phil Webb</name>
-    </author>
-    <id>tag:spring.io,2014-10-11:1785</id>
-    <updated>2014-10-11T00:37:52Z</updated>
-    <content type="html">&lt;p&gt;Spring Boot 1.1.8 has been released and is available now from &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and &lt;a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework.boot%22"&gt;Maven Central&lt;/a&gt;. &lt;/p&gt;
-
-&lt;p&gt;This maintenance release includes a &lt;a href="https://github.com/spring-projects/spring-boot/commit/3135c7f8aeb30b71eccc02bb0bb3817132c41060"&gt;security patch&lt;/a&gt; to the "white label error" page which prevents potential cross-site scripting attacks; as such it is a recommended upgrade for all Spring Boot users. For a complete list of changes please refer to the &lt;a href="https://github.com/spring-projects/spring-boot/issues?q=milestone%3A1.1.8"&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/1.1.8.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Pivotal at Silicon Valley Code Camp 2014</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/10/10/pivotal-at-silicon-valley-code-camp-2014" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-10-10:1784</id>
-    <updated>2014-10-10T10:24:00Z</updated>
-    <content type="html">&lt;p&gt;Are  you heading to Silicon Valley Code Camp 2014?   If you  are, we invite all of the Java community members to stop by the Pivotal Booth and talk to Pivotal engineers about the latest innovations  in Java SE, in Spring, Groovy, Grails, Redis, RabbitMQ, Tomcat, Cloud Foundry  and Hadoop. The exhibit space is open Saturday 8:00am – 5:00pm, and  Saturday from 8:30am to 3:30pm, so there should be plenty of time to get your  questions answered.  See below for  details about our sessions and awesome giveaways - come  find us! &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;SATURDAY - OCTOBER 11, 2014            &lt;/strong&gt;&lt;br&gt;
-9:45 AM &lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Josh Long — Spring  advocate at Pivotal&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.siliconvalley-codecamp.com/Session/2014/building-bootiful-applications-with-spring-boot" target="_blank"&gt;Building "Bootiful Applications with Spring Boot &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Room: 8401&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;11:45 AM &lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;John Hann,  — Pivotal&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.siliconvalley-codecamp.com/Session/2014/introducing-ravejs-zero-config-javascript-applications" target="_blank"&gt;Introducing Rave.js: Zero-config JavaScript Applications&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Room: 8401&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;1:45 PM &lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Ilayaperumal Gopinathan   — Pivotal&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.siliconvalley-codecamp.com/Session/2014/simplifying-big-data-development-using-spring-xd" target="_blank"&gt;Simplifying Big Data development at Spring XD&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt; Room: 8403&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;SUNDAY - OCTOBER 12, 2014&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;9:15 AM &lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Cornelia Davis —  Platform Engineer at Pivotal&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.siliconvalley-codecamp.com/Session/2014/the-self-healing-elastic-runtime-that-is-cloud-foundry"&gt;The Self-healing, Elastic Runtime that is Cloud Foundry&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Room: Room: 4302&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;10:45 AM&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Cornelia Davis —  Platform Engineer at Pivotal&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.siliconvalley-codecamp.com/Session/2014/running-your-spring-apps-in-the-cloud" target="_blank"&gt;Running Your Spring  Apps in the Cloud&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Room: 4302&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Visit us at the Pivotal Code Camp booth for technical expert conversations on Cloud Foundry, Spring, Groovy, Grails, Redis, RabbitMQ, Tomcat,   Hadoop and much more. &lt;/p&gt;
-
-&lt;p&gt;Also, don't miss the &lt;a href="http://run.pivotal.io"&gt;Pivotal Web Services&lt;/a&gt; Hoodie Push!  &lt;a href="https://spring.io/guides/gs/rest-service/"&gt;Build a REST service with Spring Boot&lt;/a&gt;, push it live to  run.pivotal.io and get a hoodie!  You can  do it ahead of time, and show it running to us, or use our laptops at the  booth. &lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://raw.githubusercontent.com/pieterhumphrey/springio_website_images/master/hoodie.PNG" target="_blank"&gt;&lt;img border="0" width="215" height="254" src="https://raw.githubusercontent.com/pieterhumphrey/springio_website_images/master/hoodie.PNG" style="max-width:100%;"&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;Save the date for SpringOne2GX 2015!  We hope you will mark your calendar and join  us again! SpringOne2GX 2015 will be held September 14 - 17, 2015 at the  Marriott Marquis in Washington DC.&lt;/p&gt;</content>
   </entry>
 </feed>
 
