@@ -15,7 +15,8 @@ public class ProductServiceImpl implements ProductService
 {
 
 	@Autowired  //this gets initialised automatically - no need to do new ProductRepository();
-	private ProductRepository productRepository;
+	private ProductRepository productRepository;  //automatically creates new InMemoryProductRepository(); 
+	//this then creates new InMemoryProductRepository();
 	
 	public List<Product> getAllProducts()
 	{

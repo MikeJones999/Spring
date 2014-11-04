@@ -1,7 +1,5 @@
 package com.packt.webstore.controller;
 
-import java.math.BigDecimal;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,7 +36,7 @@ public class ProductController
 	//private ProductRepository productRepository;
 	
 	//now interacts with service layer
-	private ProductService productService;
+	private ProductService productService; //automatically creates new productServiceImpl(); which has all the products
 	/**
 	 * As soon as Spring sees the @Autowired annotation on top of the ProductRepository reference,
 	 *  it assigns the object of InMemoryProductRepository to this reference since 
@@ -52,7 +50,7 @@ public class ProductController
 	@RequestMapping ("/products")
 	public String list(Model model)
 	{
-		
+		//add products to the model
 		//model.addAttribute("products", productRepository.getAllProducts());
 		model.addAttribute("products", productService.getAllProducts());
 		return "products";

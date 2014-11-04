@@ -1,0 +1,21 @@
+package com.packt.webstore.domain.repository.impl;
+
+import java.util.List;
+
+import com.packt.webstore.domain.Customer;
+import com.packt.webstore.domain.repository.CustomerRepository;
+
+public class InMemoryCustomerRepository implements CustomerRepository
+{
+	private 
+	
+	
+	
+	
+	public List<Customer> getAllCustomers() 
+	{
+		
+		return null;
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.packt.webstore.service.impl;
+
+import java.util.List;
+
+import com.packt.webstore.domain.Product;
+import com.packt.webstore.service.ProductService;
+
+public class ProductServiceImpl implements ProductService {
+
+	public List<Product> getAllProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

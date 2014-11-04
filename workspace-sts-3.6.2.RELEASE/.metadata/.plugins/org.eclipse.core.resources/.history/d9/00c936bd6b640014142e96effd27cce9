@@ -1,0 +1,49 @@
+package com.packt.webstore.domain;
+
+public class Customer 
+{
+	private int customerId;
+	private int noOfOrdersMade;
+	private String name;
+	
+	
+	
+	
+	
+
+	
+	public String getName() 
+	{
+		return name;
+	}
+	public void setName(String name) 
+	{
+		this.name = name;
+	}
+	public int getCustomerId() 
+	{
+		return customerId;
+	}
+	public void setCustomerId(int customerId) 
+	{
+		this.customerId = customerId;
+	}
+	public int getNoOfOrdersMade() 
+	{
+		return noOfOrdersMade;
+	}
+	public void setNoOfOrdersMade(int noOfOrdersMade) 
+	{
+		this.noOfOrdersMade = noOfOrdersMade;
+	}
+
+	@Override
+	public String toString() 
+	{
+		return "Customer [Customer Id=" + customerId + ", name=" + name + "]";
+	}
+	
+	
+	
+	
+}

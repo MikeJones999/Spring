@@ -2,7 +2,7 @@ package com.packt.webstore.domain;
 
 import java.math.BigDecimal;
 /**
- * Product class - for creatinga product to be shown in the webstore
+ * Product class - for creating a product to be shown in the webstore
  * @author MikieJ Study
  *
  */

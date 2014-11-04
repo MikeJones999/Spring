@@ -5,7 +5,269 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-11-03T13:08:00Z</updated>
+  <updated>2014-11-04T12:53:00Z</updated>
+  <entry>
+    <title>This Week in Spring  - November 4th, 2014</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/04/this-week-in-spring-november-4th-2014" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2014-11-04:1809</id>
+    <updated>2014-11-04T12:53:00Z</updated>
+    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;!  This week I'm on the road talking to enthusiastic Spring developers  in Casablanca,  Morocco at the &lt;a href="http://www.jmaghreb.io/"&gt;JMaghreb&lt;/a&gt; conference  and then it's  off to London (again!) for the amazing &lt;a href="http://spring.io/blog/2014/10/29/pivotal-at-spring-exchange-2014-in-london-uk"&gt;Spring eXchange&lt;/a&gt;. If you're at either, be sure to say hi! &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Artem Bilan, Spring Integration ninja and a personal hero of mine, has &lt;a href="http://spring.io/blog/2014/10/31/spring-integration-java-dsl-1-0-rc1-released"&gt;just announced the Spring Integration RC1&lt;/a&gt; release. I don't know if you've seen the Java configuration DSL, but it makes writing complex integration flows a breeze! It takes advantage of Java 8's lamba support. Check it out! Remember, microservices aren't exclusively REST centric. If you're trying to build a microservice and expose it over any other mechanism, I'd start with Spring Integration.&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring ninja Thomas Risberg just &lt;a href="http://spring.io/blog/2014/11/03/spring-for-apache-hadoop-2-0-3-released"&gt;announced Spring for Hadoop 2.0.3&lt;/a&gt;! This release adds support for  Apache Hadoop 2.5.1 (hadoop25) and Pivotal HD 2.1 (phd21).&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="http://spring.io/blog/2014/11/03/spring-data-evans-sr1-released"&gt;Spring Data ninja Christoph Strobl just announced Spring Data Evans service release 1 (SR1)&lt;/a&gt;. The new release contains many important updates and is a recommended upgrade.&lt;/li&gt;
+&lt;li&gt;I'll be doing a webinar  with ZeroTurnaround's Adam Koblentz introducing how to use &lt;a href="http://spring.io/blog/2014/10/28/webinar-spring-boot-and-jrebel-6-0"&gt;Spring (and Spring  Boot in particular) and JRebel 6&lt;/a&gt;. Spring Boot makes Java as productive as it can get, but sometimes you need a little bit more to get around Java's traditionally awful support for things like live-reloading code during development (to expedite iteration). In this webinar, we'll look at how that's done with JRebel!&lt;/li&gt;
+&lt;li&gt;Check out the replay of my webinar about &lt;a href="http://spring.io/blog/2014/11/04/webinar-replay-building-bootful-uis-with-spring-boot-and-vaadin"&gt;Building “Bootful” UIs with Spring Boot and Vaadin &lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Check out the replay of Russ Danner's  webinar introducing &lt;a href="http://spring.io/blog/2014/10/30/webinar-replay-content-enabled-web-and-mobile-applications-with-spring-groovy-and-crafter"&gt;how to build content-enabled web and mobile applications&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;I loved Matt Raible's epic post introducing how he built &lt;a href="http://raibledesigns.com/rd/entry/building_a_rest_api_with"&gt;a REST API using Spring MVC, SPring Data REST (HAL support), Swagger, Liquibase, and JAXB&lt;/a&gt;, all of it of course &lt;a href="http://start.spring.io"&gt;through Spring Boot&lt;/a&gt;. This post earned a bookmark! &lt;/li&gt;
+&lt;li&gt;Did you see Thomas Risberg's epic talk on &lt;em&gt;Spring Boot for Hadoop&lt;/em&gt; at the meetup last week in Boston? If not, &lt;a href="http://github.com/trisberg/bostonhadoop"&gt;check out the code and slides on GitHub&lt;/a&gt;! They're illuminating! &lt;/li&gt;
+&lt;li&gt;Dennis Schulte,  over on the CodeCentric blog put together a &lt;em&gt;very&lt;/em&gt; nice post on &lt;a href="http://blog.codecentric.de/en/2014/10/log-management-spring-boot-applications-logstash-elastichsearch-kibana/"&gt;using Logstash, ElasticSearch, and Spring Boot&lt;/a&gt;. Check it out!&lt;/li&gt;
+&lt;li&gt;I spent some time helping a misguided few with the &lt;a href="http://spring.io/blog/2014/11/04/a-quality-qualifier"&gt;nuances of Spring's &lt;code&gt;@Qualifier&lt;/code&gt; annotation&lt;/a&gt; and published the details on the Spring blog. Hopefully this is helpful for somebody out there!&lt;/li&gt;
+&lt;li&gt;Ben Hale, who leads the Java experience on Cloud Foundry and who is a Spring rockstar in his own right, did a &lt;a href="http://blog.newrelic.com/2014/10/27/cloud-foundry-java-buildpack-new-relic-2/"&gt;guest post for New Relic on the 1-click deployment experience to setup New Relic on a Cloud Foundry based application&lt;/a&gt;. Definitely worth a read! If you want a look at what New Relic means for Spring developers, may I humbly recommend &lt;a href="http://www.youtube.com/watch?v=ixnlDL6wli4"&gt;this webinar that New Relic's Ashly Puls and I did earlier this year&lt;/a&gt;?&lt;/li&gt;
+&lt;li&gt;Recently, community member Marc Schipperheyn opened up a &lt;a href="http://jira.spring.io/browse/SPR-12266"&gt;JIRA seeking guidance of the role of Spring in modern single-page application-style web applications&lt;/a&gt;. The ensuing discussion is &lt;em&gt;very&lt;/em&gt; illuminating for numerous reasons besides that it'll inspire changes in our documentation! Check it out and your $02.00 if you've got it to contribute!&lt;/li&gt;
+&lt;li&gt;Our pal Petri Kainulainen  put together a nice &lt;a href="http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-resetting-auto-increment-columns-before-each-test-method/"&gt;post on resetting auto-increment columns before Spring-based unit tests&lt;/a&gt;&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;Our pal Rafal Borowiec is back at it again, this time with a post that looks at how to &lt;a href="http://www.javacodegeeks.com/2014/10/spring-boot-actuator-custom-endpoint-with-mvc-layer-on-top-of-it.html"&gt;create Spring Boot actuator endpoints&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Are you using Apache Camel? Did you know that it &lt;a href="http://camel.apache.org/spring-boot.html"&gt;now provides a Spring Boot-based auto-configuration&lt;/a&gt;? &lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>A quality @Qualifier</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/04/a-quality-qualifier" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2014-11-04:1808</id>
+    <updated>2014-11-04T11:52:00Z</updated>
+    <content type="html">&lt;p&gt;Sometimes,  &lt;em&gt;teh  Twitterz&lt;/em&gt; is an amazing place. Just last week I spent some time helping clarify the behavior of Spring's &lt;code&gt;@Qualifier&lt;/code&gt;  annotation, which is both older than JSR 330 &lt;em&gt;and&lt;/em&gt; offers a  richer superset of JSR 330's &lt;code&gt;@Qualifier&lt;/code&gt; annotation.  These misguided few seemed to be under the impression that Spring's annotation didn't offer the same degree of type-safety as the JSR 330 annotation. I don't know if it's because they simply hadn't read up on the support (which is fairly new, since it's only been around since 2007), or if it's because they work for companies that make their money if you stop using Spring, but either way it was an excellent opportunity for a refresher! &lt;/p&gt;
+
+&lt;p&gt;The qualifier annotation helps disambiguate bean references when Spring would otherwise not be able to do so. Spring's XML configuration supports a version of this, but without the type-safety, of course. We'll focus in this example on using Java configuration and component-scanning to register beans. As more people move to Spring's 8-year old Java configuration style this question seems to more frequently come up. Spring Boot is a Java configuration-first approach to building applications, and this technique may just come in handy in a pinch in a larger application based on Spring Boot.  &lt;/p&gt;
+
+&lt;p&gt;It's use is simple. Suppose you have two beans that implement the &lt;code&gt;MarketPlace&lt;/code&gt; interface. If you declare  an array of &lt;code&gt;MarketPlace&lt;/code&gt;s - then Spring will provide all beans that implement that interface:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Autowired&lt;/span&gt;
+&lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;MarketPlace&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;marketPlaces&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you want to inject just one, you need to disambiguate the references. You can, in the simple case, just do so by bean ID: &lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Autowired&lt;/span&gt; 
+&lt;span class="nd"&gt;@Qualifier&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="s"&gt;"ios"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;// the use is unique to Spring. It's darned convenient, too!&lt;/span&gt;
+&lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;MarketPlace&lt;/span&gt; &lt;span class="n"&gt;marketPlace&lt;/span&gt; &lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This assumes you've elsewhere defined a bean whose ID is &lt;code&gt;ios&lt;/code&gt;. This use is unique to Spring. You can  also  use &lt;code&gt;@Qualifier&lt;/code&gt; to create a type-safe binding that links the bean definition to the injection site by the qualities of the qualifier annotation. Here's an example based on pureplay Spring annotations:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;
+&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="n"&gt;spring&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.beans.factory.annotation.Autowired&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.beans.factory.annotation.Qualifier&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.context.annotation.AnnotationConfigApplicationContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.context.annotation.ComponentScan&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.context.annotation.Configuration&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.stereotype.Component&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;javax.annotation.PostConstruct&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.lang.annotation.ElementType&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.lang.annotation.Retention&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.lang.annotation.RetentionPolicy&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.lang.annotation.Target&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;static&lt;/span&gt; &lt;span class="n"&gt;spring&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Spring&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Platform&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="nd"&gt;@Configuration&lt;/span&gt;
+&lt;span class="nd"&gt;@ComponentScan&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Spring&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nf"&gt;AnnotationConfigApplicationContext&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Spring&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@Autowired&lt;/span&gt;
+    &lt;span class="nd"&gt;@Platform&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Platform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;OperatingSystems&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ANDROID&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;MarketPlace&lt;/span&gt; &lt;span class="n"&gt;android&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@Autowired&lt;/span&gt;
+    &lt;span class="nd"&gt;@Platform&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Platform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;OperatingSystems&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;IOS&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;MarketPlace&lt;/span&gt; &lt;span class="n"&gt;ios&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@PostConstruct&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;qualifyTheTweets&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"ios:"&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ios&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"android:"&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;android&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// the type has to be public!&lt;/span&gt;
+    &lt;span class="nd"&gt;@Target&lt;/span&gt;&lt;span class="o"&gt;({&lt;/span&gt;&lt;span class="n"&gt;ElementType&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;FIELD&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;ElementType&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;METHOD&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;ElementType&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TYPE&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;ElementType&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;PARAMETER&lt;/span&gt;&lt;span class="o"&gt;})&lt;/span&gt;
+    &lt;span class="nd"&gt;@Retention&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;RetentionPolicy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;RUNTIME&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="nd"&gt;@Qualifier&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="nd"&gt;@interface&lt;/span&gt; &lt;span class="n"&gt;Platform&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+        &lt;span class="n"&gt;OperatingSystems&lt;/span&gt; &lt;span class="nf"&gt;value&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+        &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kd"&gt;enum&lt;/span&gt; &lt;span class="n"&gt;OperatingSystems&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;IOS&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;ANDROID&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;MarketPlace&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="nd"&gt;@Component&lt;/span&gt;
+&lt;span class="nd"&gt;@Platform&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Platform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;OperatingSystems&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;IOS&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;AppleMarketPlace&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;MarketPlace&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@Override&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;toString&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;"apple"&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="nd"&gt;@Component&lt;/span&gt;
+&lt;span class="nd"&gt;@Platform&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Platform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;OperatingSystems&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ANDROID&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;GoogleMarketPlace&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;MarketPlace&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@Override&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;toString&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;"android"&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To compile and run this example, make sure you have &lt;code&gt;org.springframework.boot:spring-boot-starter:1.1.8.RELEASE&lt;/code&gt; on the CLASSPATH.&lt;/p&gt;
+
+&lt;p&gt;This example shows the definition of two &lt;code&gt;MarketPlace&lt;/code&gt; implementations, one for &lt;code&gt;GoogleMarketPlace&lt;/code&gt; and one for the &lt;code&gt;AppleMarketPlace&lt;/code&gt;. We define an annotation &lt;code&gt;@Platform&lt;/code&gt; that takes a parameter of type &lt;code&gt;Platform.OperatingSystems&lt;/code&gt;. This annotation is itself annotated with &lt;code&gt;@Qualifier&lt;/code&gt; which tells Spring to treat it as a qualifier. The bean definitions are annotated accordingly: the &lt;code&gt;GoogleMarketPlace&lt;/code&gt; is annotated with &lt;code&gt;@Platform(Platform.OperatingSystems.ANDROID)&lt;/code&gt; and the &lt;code&gt;AppleMarketPlace&lt;/code&gt; is annotated with &lt;code&gt;@Platform(Platform.OperatingSystems.IOS)&lt;/code&gt;. Injecting either one (in the &lt;code&gt;Spring&lt;/code&gt; class) then becomes as simple as using the &lt;code&gt;@Qualifier&lt;/code&gt; annotation at the injection site. I'm using field injection here, though this is just a scratchpad to flesh things out. Obviously, in any sort of &lt;em&gt;real&lt;/em&gt; code you should prefer constructor and setter injection. &lt;/p&gt;
+
+&lt;p&gt;Spring natively supports JSR 330, as well. After all, we did help lead that initiative. Here's the equivalent example using JSR 330 alternatives. &lt;code&gt;@Component&lt;/code&gt; becomes &lt;code&gt;@Named&lt;/code&gt;, &lt;code&gt;@Autowired&lt;/code&gt; becomes &lt;code&gt;@Inject&lt;/code&gt; and &lt;code&gt;@Qualifier&lt;/code&gt; becomes &lt;code&gt;@javax.inject.Qualifier&lt;/code&gt;, but otherwise this should look very familiar.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;
+&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="n"&gt;jsr330&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.context.annotation.AnnotationConfigApplicationContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.context.annotation.ComponentScan&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.context.annotation.Configuration&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;javax.annotation.PostConstruct&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;javax.inject.Inject&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;javax.inject.Named&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.lang.annotation.ElementType&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.lang.annotation.Retention&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.lang.annotation.RetentionPolicy&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.lang.annotation.Target&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;static&lt;/span&gt; &lt;span class="n"&gt;jsr330&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Jsr330&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Platform&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="nd"&gt;@Configuration&lt;/span&gt;
+&lt;span class="nd"&gt;@ComponentScan&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Jsr330&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nf"&gt;AnnotationConfigApplicationContext&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Jsr330&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@Inject&lt;/span&gt;
+    &lt;span class="nd"&gt;@Platform&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Platform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;OperatingSystems&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ANDROID&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;MarketPlace&lt;/span&gt; &lt;span class="n"&gt;android&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@Inject&lt;/span&gt;
+    &lt;span class="nd"&gt;@Platform&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Platform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;OperatingSystems&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;IOS&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;MarketPlace&lt;/span&gt; &lt;span class="n"&gt;ios&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@PostConstruct&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;qualifyTheTweets&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"ios:"&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ios&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"android:"&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;android&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// the type has to be public!&lt;/span&gt;
+    &lt;span class="nd"&gt;@Target&lt;/span&gt;&lt;span class="o"&gt;({&lt;/span&gt;&lt;span class="n"&gt;ElementType&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;FIELD&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;ElementType&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;METHOD&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;ElementType&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TYPE&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;ElementType&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;PARAMETER&lt;/span&gt;&lt;span class="o"&gt;})&lt;/span&gt;
+    &lt;span class="nd"&gt;@Retention&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;RetentionPolicy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;RUNTIME&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="nd"&gt;@javax.inject.Qualifier&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="nd"&gt;@interface&lt;/span&gt; &lt;span class="n"&gt;Platform&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+        &lt;span class="n"&gt;OperatingSystems&lt;/span&gt; &lt;span class="nf"&gt;value&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+        &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kd"&gt;enum&lt;/span&gt; &lt;span class="n"&gt;OperatingSystems&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;IOS&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;ANDROID&lt;/span&gt;
+        &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;MarketPlace&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="nd"&gt;@Named&lt;/span&gt;
+&lt;span class="nd"&gt;@Platform&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Platform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;OperatingSystems&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;IOS&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;AppleMarketPlace&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;MarketPlace&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@Override&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;toString&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;"apple"&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="nd"&gt;@Named&lt;/span&gt;
+&lt;span class="nd"&gt;@Platform&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Platform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;OperatingSystems&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ANDROID&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;GoogleMarketPlace&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;MarketPlace&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@Override&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;toString&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;"android"&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To compile and run this example, make sure you have &lt;code&gt;org.springframework.boot:spring-boot-starter:1.1.8.RELEASE&lt;/code&gt; &lt;em&gt;and&lt;/em&gt; &lt;code&gt;javax.inject:javax.inject:1&lt;/code&gt; on the CLASSPATH.&lt;/p&gt;
+
+&lt;p&gt;Is any of this new? No. That's the point. This has been possible since Spring 2.5 (which we released in 2007). It's surprising that people still don't know about this functionality, but hopefully this blog makes it easier for people to get started. As a next step, &lt;a href="http://docs.spring.io/spring/docs/2.5.x/reference/beans.html#beans-autowired-annotation-qualifiers"&gt;check out the documentation (from 2.5 onwards!)&lt;/a&gt; which covers every gory detail - including the XML alternative - in depth!&lt;/p&gt;
+
+&lt;p&gt;I should mention that - in practice - I haven't needed to do this a lot in my code. Maybe a dozen times in the last 7 years. In can be handy, though! &lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Webinar Replay: Building “Bootful” UIs with Spring Boot and Vaadin</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/04/webinar-replay-building-bootful-uis-with-spring-boot-and-vaadin" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2014-11-04:1810</id>
+    <updated>2014-11-04T09:09:00Z</updated>
+    <content type="html">&lt;p&gt;Speaker: Josh Long, Pivotal and Peter Lehto, Vaadin &lt;/p&gt;
+
+&lt;p&gt;It's been a long day, but you've done it: you've got a Spring Boot powered backend and now you need to build the UI that'll power the workforce and deliver next week. Vaadin, a UI framework that marries the ease of use of server-side Java and the rich, dynamic nature of client-side JavaScript, integrates well with Spring Boot and offers UI polish that would be hard to secure any other way. Join Spring developer advocate Josh Long and Vaadin evangelists for a look at how Vaadin and Spring Boot can get you to production quicker, and easier.&lt;/p&gt;
+
+&lt;p&gt;Learn more about Spring Boot &lt;a href="http://projects.spring.io/spring-boot"&gt;http://projects.spring.io/spring-boot&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Learn more about Vaadin &lt;a href="http://www.vaadin.com"&gt;http://www.vaadin.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;iframe width="420" height="315" src="//www.youtube.com/embed/PngL2OJAOfk" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
   <entry>
     <title>Spring Data Evans SR1 released</title>
     <link rel="alternate" href="https://spring.io/blog/2014/11/03/spring-data-evans-sr1-released" />
@@ -70,7 +332,7 @@
 &lt;li&gt;2.0.3.RELEASE-hadoop12 - Apache Hadoop 1.2.x [1.2.1]&lt;/li&gt;
 &lt;li&gt;2.0.3.RELEASE-hadoop24 - Apache Hadoop 2.4.x [2.4.1]&lt;/li&gt;
 &lt;li&gt;2.0.3.RELEASE-hadoop25 - Apache Hadoop 2.5.x [2.5.1]&lt;/li&gt;
-&lt;li&gt;2.0.3.RELEASE-phd1 - Pivotal HD 1.0 [2.0.5-alpha-gphd-2.1.0.0]&lt;/li&gt;
+&lt;li&gt;2.0.3.RELEASE-phd1 - Pivotal HD 1.1 [2.0.5-alpha-gphd-2.1.0.0]&lt;/li&gt;
 &lt;li&gt;2.0.3.RELEASE-phd20 - Pivotal HD 2.0 [2.2.0-gphd-3.0.1.0]&lt;/li&gt;
 &lt;li&gt;2.0.3.RELEASE-phd21 - Pivotal HD 2.1 [2.2.0-gphd-3.1.0.0]&lt;/li&gt;
 &lt;li&gt;2.0.3.RELEASE-cdh4 - Cloudera CDH4 MR1 [2.0.0-mr1-cdh4.6.0]&lt;/li&gt;
@@ -552,14 +814,14 @@ We look forward to your feedback.&lt;/p&gt;</content>
       <name>Artem Bilan</name>
     </author>
     <id>tag:spring.io,2014-10-26:1797</id>
-    <updated>2014-10-27T14:40:59Z</updated>
+    <updated>2014-10-27T14:40:00Z</updated>
     <content type="html">&lt;p&gt;Dear Spring community,&lt;/p&gt;
 
 &lt;p&gt;We are pleased to announce that the Spring Integration 4.1 Release Candidate is available.
 Please use the &lt;a href="http://repo.springsource.org/milestone"&gt;Milestone Repository&lt;/a&gt; with Maven or Gradle, or download a &lt;a href="http://repo.spring.io/milestone/org/springframework/integration/spring-integration/4.1.0.RC1"&gt;distribution archive&lt;/a&gt;, to give it a spin.&lt;/p&gt;
 
 &lt;p&gt;The release includes many new features and improvements, as well as a number of bug fixes. The GA release
-is planned for the first week of November.&lt;/p&gt;
+is planned in early November.&lt;/p&gt;
 
 &lt;p&gt;First of all, thank you all who provided feedback for the
 &lt;a href="https://spring.io/blog/2014/09/05/spring-integration-4-1-milestone-1-available"&gt;4.1 Milestone 1&lt;/a&gt; and
@@ -743,8 +1005,8 @@ list of "What's new" in the 4.1 release, see the &lt;a href="http://docs.spring.
       <name>Artem Bilan</name>
     </author>
     <id>tag:spring.io,2014-10-23:1794</id>
-    <updated>2014-10-23T18:37:03Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce the availability of the Release Candidate for Spring AMQP 1.4; the GA is planned to be released during the first week of November.&lt;/p&gt;
+    <updated>2014-10-23T18:37:00Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce the availability of the Release Candidate for Spring AMQP 1.4; the GA is planned to be released in early November.&lt;/p&gt;
 
 &lt;p&gt;First of all, thank you all who provided feedback for the &lt;a href="https://spring.io/blog/2014/09/05/spring-amqp-for-java-1-4-milestone-1-available"&gt;milestone 1.4 M1 version&lt;/a&gt; and submitted reports (bugs or new features).
 Special thanks to &lt;a href="https://spring.io/team/snicoll/"&gt;Stéphane Nicoll&lt;/a&gt;, who had introduced annotation-based message
@@ -1450,101 +1712,6 @@ This week I'm talking to developers at the Neo4j &lt;b&gt; GraphConnect&lt;/b&gt
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;As always we are eager to hear from you! Reach out to us on &lt;a href="https://twitter.com/SpringData"&gt;Twitter&lt;/a&gt;, &lt;a href="http://stackoverflow.com/tags/spring-data"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="http://jira.spring.io"&gt;JIRA&lt;/a&gt; to request new features, suggest improvements or report a bug.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring  - Tuesday October 14th, 2014</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/10/14/this-week-in-spring-tuesday-october-14th-2014" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2014-10-14:1789</id>
-    <updated>2014-10-14T18:05:00Z</updated>
-    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I've been at Silicon Valley Code Camp, JAX London and Geekout UK talking to developers about how to build scalable, microservice-centric &lt;a href="http://start.spring.io"&gt;Spring Boot&lt;/a&gt; applications on &lt;a href="http://cloudfoundry.org/index.html"&gt;Cloud Foundry&lt;/a&gt;. It's been a lot fun talking to enthusiastic developers (on both sides of the Atlantic!).&lt;/p&gt;
-
-&lt;p&gt;Without further ado, let's get on with the roundup!&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Spring Boot co-lead Phil Webb just announced the availability of &lt;a href="https://spring.io/blog/2014/10/11/spring-boot-1-2-0-m2-available-now"&gt;Spring Boot 1.2.0.M2&lt;/a&gt; which includes, among other things, auto-configuration for Jersey, log4j, &lt;code&gt;commons-dbcp&lt;/code&gt; support, a smarter &lt;em&gt;disk usage&lt;/em&gt; health indicator and improved RabbitMQ support&lt;/li&gt;
-&lt;li&gt;Spring and Groovy Tool Suite lead Martin Lippert &lt;a href="https://spring.io/blog/2014/10/13/spring-tool-suite-and-groovy-grails-tool-suite-3-6-2-released"&gt;has just announced the latest and greatest release, 3.6.2&lt;/a&gt;, which is a maintenance release that includes an update to the latest Eclipse Luna SR1 installation. &lt;/li&gt;
-&lt;li&gt;Also, Spring Boot co-lead &lt;a href="https://spring.io/blog/2014/10/11/spring-boot-1-1-8-released"&gt;Phil Webb just announced the 1.1.8 release of the 1.1x line of Spring Boot&lt;/a&gt; which includes a fix for the white-label error page cross-site scripting attack. &lt;/li&gt;
-&lt;li&gt;Federated security is an important part of any distributed, multi-client, (micro)service-oriented system. Spring Security and Spring Security OAuth, in particular, provide a compelling solution. Join the good Dr. Dave Syer for this &lt;a href="https://spring.io/blog/2014/10/01/webinar-security-for-microservices-with-spring-and-oauth2"&gt;upcoming webinar on microservice security using OAuth2&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;Matt Stine will be doing a webinar introducing &lt;a href="https://spring.io/blog/2014/10/01/webinar-architecting-for-continuous-delivery-microservices-with-pivotal-cf-and-spring-cloud"&gt;how Pivotal Cloud Foundry and Spring Cloud make for a natural solution to building microservices&lt;/a&gt;. Don't miss this one!&lt;/li&gt;
-&lt;li&gt;Atlanta, GA, USA Tuesday Oct 21, Learn about Spring, Microservices, and Cloud Foundry at a &lt;a href="http://www.pivotal.io/platform-as-a-service/cloud-platform-roadshow/atlanta#cities"&gt;one day roadshow event&lt;/a&gt; at Cox communications.&lt;/li&gt;
-&lt;li&gt;Munich, Germany, GA, Thursday Oct 23, Learn about Spring, Microservices, and Cloud Foundry at a &lt;a href="http://www.pivotal.io/platform-as-a-service/cloud-platform-roadshow/munich"&gt;one day roadshow event&lt;/a&gt; at EMC's office in Ismaning, Germany. &lt;/li&gt;
-&lt;li&gt;I hope you'll join the Vaadin team and I on October 23rd for a &lt;a href="http://spring.io/blog/2014/10/01/webinar-building-bootful-uis-with-spring-boot-and-vaadin"&gt;look how to build Spring Boot-powered Vaadin applications&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;The &lt;em&gt;Java et Moi&lt;/em&gt; blog has a nice (French language) post &lt;a href="http://javaetmoi.com/2014/10/annotation-sessionattributes-modelattribute-spring-mvc/"&gt;on  using Spring MVC's &lt;code&gt;@SessionAttribute&lt;/code&gt; annotation&lt;/a&gt;&lt;br&gt;
-&lt;/li&gt;
-&lt;li&gt;I &lt;em&gt;really&lt;/em&gt; enjoyed this &lt;a href="http://altfatterz.blogspot.com/2014/10/software-configuration-with-spring-boot.html"&gt;very thorough look at contributing configuration property values&lt;/a&gt; to a Spring Boot application (as &lt;code&gt;--D&lt;/code&gt; arguments, environment variables, values in a property file, and values inside of JNDI)&lt;/li&gt;
-&lt;li&gt;Sudhir Dharmadhikari   has done a &lt;em&gt;very&lt;/em&gt; &lt;a href="http://iwaow.blogspot.com/2014/10/jhipster-super-baby-in-springroos-pouch.html"&gt;nice job introducing the &lt;code&gt;yeoman&lt;/code&gt; code-generator based JHipster&lt;/a&gt;, which builds on top of &lt;a href="http://spring.io/projects/spring-boot"&gt;Spring Boot&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Our pal Miroslav Kopecky is back, this &lt;a href="http://java.dzone.com/articles/scala-4-spring-mvc-without-0"&gt;time with a nice post on using Spring MVC (in Spring 4) using Java configuration&lt;/a&gt; (through Scala!)&lt;/li&gt;
-&lt;li&gt;
-&lt;a href="http://antirez.com/news/79"&gt;Redis Cluster is no longer vaporware&lt;/a&gt;! Check out the details.&lt;/li&gt;
-&lt;li&gt; Biju Kunjummen has put together &lt;a href="http://java.dzone.com/articles/spring-configuration-and"&gt;a very nice post on  the two styles of Java configuration&lt;/a&gt;: one where you declare dependencies as parameters to the &lt;code&gt;@Bean&lt;/code&gt;-annotated bean definition method, and one where you simply reference the other bean by calling a method.&lt;br&gt;
-&lt;/li&gt;
-&lt;li&gt;Check out this post on &lt;a href="http://architects.dzone.com/articles/using-log4j2-slf4j-spring-4"&gt;avoiding dependency conflicts between Log4j2 and SLF4J&lt;/a&gt; in a Spring application.&lt;/li&gt;
-&lt;li&gt;Check out this post by Daniel Murygin which includes  a detailed walk-through &lt;a href="http://murygin.wordpress.com/2014/10/13/rest-web-service-file-uploads-spring-boot/"&gt;on building a fairly non-trivial REST service (that even handles file-uploads!) and client application using Spring Boot&lt;/a&gt;?&lt;br&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tool Suite and Groovy/Grails Tool Suite 3.6.2 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/10/13/spring-tool-suite-and-groovy-grails-tool-suite-3-6-2-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Martin Lippert</name>
-    </author>
-    <id>tag:spring.io,2014-10-13:1788</id>
-    <updated>2014-10-13T14:20:11Z</updated>
-    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-
-&lt;p&gt;I am happy to announce the new release of our Eclipse-based tooling today:
-The Spring Tool Suite (STS) 3.6.2 and the Groovy/Grails Tool Suite (GGTS) 3.6.2.&lt;/p&gt;
-
-&lt;p&gt;This is a maintenance release that updates STS/GGTS to the just released Eclipse Luna SR1 release. This includes a number of fixes across the various projects that are included in the STS distribution, together with fixes for the Java8 compiler and tooling in Eclipse.&lt;/p&gt;
-
-&lt;p&gt;To download the distributions, please go visit:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Spring Tool Suite: &lt;a href="https://spring.io/tools/sts/all"&gt;https://spring.io/tools/sts/all&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;Groovy/Grails Tool Suite: &lt;a href="https://spring.io/tools/ggts/all"&gt;https://spring.io/tools/ggts/all&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Detailed new and noteworthy notes can be found here: &lt;a href="http://docs.spring.io/sts/nan/v362/NewAndNoteworthy.html"&gt;STS/GGTS 3.6.2 New &amp;amp; Noteworthy&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;NOTE:
-Both tool suites ship on top of the latest Eclipse Luna 4.4 SR1 release as 64bit and 32bit based zip files only. There will be no native installers for STS/GGTS anymore.&lt;/p&gt;
-
-&lt;p&gt;Since the 3.6.0 release we shifted towards a slightly changed release schedule, shipping minor releases more frequently. Therefore 3.6.3 is scheduled to ship in December, followed by 3.6.4 in early March 2015, shortly after the Eclipse Luna SR2 release.&lt;/p&gt;
-
-&lt;p&gt;Enjoy!&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 1.2.0.M2 Available Now</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/10/11/spring-boot-1-2-0-m2-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Phil Webb</name>
-    </author>
-    <id>tag:spring.io,2014-10-11:1786</id>
-    <updated>2014-10-11T03:55:53Z</updated>
-    <content type="html">&lt;p&gt;I am pleased to announce that Spring Boot 1.2.0.M2 is available now in the &lt;a href="http://repo.springsource.org/milestone"&gt;Spring milestone repository&lt;/a&gt;. This release adds a number of  improvements and new features over &lt;a href="https://spring.io/blog/2014/09/08/spring-boot-1-2-0-m1-available-now"&gt;M1&lt;/a&gt;. Highlights include:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Full configuration of Jackson &lt;code&gt;ObjectMapper&lt;/code&gt; features from your &lt;code&gt;application.properties&lt;/code&gt; file.&lt;/li&gt;
-&lt;li&gt;Auto-configuration for Jersey.&lt;/li&gt;
-&lt;li&gt;Support for Log4j2.&lt;/li&gt;
-&lt;li&gt;Support for commons-dbcp2.&lt;/li&gt;
-&lt;li&gt;A new "disk usage" health indicator.&lt;/li&gt;
-&lt;li&gt;Improved RabbitMQ auto-configuration.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For a complete list of changes, and for upgrade instructions, see the &lt;a href="http://github.com/spring-projects/spring-boot/wiki/Spring-Boot-1.2-Release-Notes"&gt;Spring Boot 1.2 Release Notes&lt;/a&gt; on the WIKI. The &lt;a href="http://docs.spring.io/spring-boot/docs/1.2.0.M2/reference/htmlsingle/"&gt;reference documentation&lt;/a&gt; also continues to be updated to cover the new features.&lt;/p&gt;
-
-&lt;p&gt;Thanks again to everyone that has contributed to the release! Please give it a go and report any problems using &lt;a href="http://github.com/spring-projects/spring-boot/issues"&gt;the project Issue tracker&lt;/a&gt; page.&lt;/p&gt;</content>
   </entry>
 </feed>
 
