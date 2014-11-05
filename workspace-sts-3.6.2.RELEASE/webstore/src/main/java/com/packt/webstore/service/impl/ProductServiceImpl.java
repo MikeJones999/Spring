@@ -25,4 +25,16 @@ public class ProductServiceImpl implements ProductService
 		return pros;
 	}
 
+	public Product getProductById(String productID) 
+	{
+		//return the product with correct ID
+		return productRepository.getProductById(productID);
+	}
+
+	public List<Product> getProductsByCategory(String category) 
+	{
+		//goes to the productRepository to the product by category
+		return productRepository.getProductsByCategory(category);
+	}
+
 }

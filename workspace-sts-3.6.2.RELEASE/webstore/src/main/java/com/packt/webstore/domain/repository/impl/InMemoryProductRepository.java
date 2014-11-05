@@ -56,11 +56,18 @@ public class InMemoryProductRepository implements ProductRepository
 		tablet_Nexus.setManufacturer("Google");
 		tablet_Nexus.setUnitsInStock(1000);
 		
+		//product four
+		Product lapTop_Dell = new Product("P5555","Alienware ", new BigDecimal(650));
+		lapTop_Dell.setDescription("Dell i5 4970k processor, 16GB Ram, Nividia 780GTX, 120GB Crucial SSD and 1TB Samsung Spin F3 HD");
+		lapTop_Dell.setCategory("Laptop");
+		lapTop_Dell.setManufacturer("Dell");
+		lapTop_Dell.setUnitsInStock(750);
 		
 		//add all three to the model
 		listOfProducts.add(iPhone);
 		listOfProducts.add(galaxy);
 		listOfProducts.add(tablet_Nexus);
+		listOfProducts.add(lapTop_Dell);
 		
 	}
 	
@@ -95,6 +102,27 @@ public class InMemoryProductRepository implements ProductRepository
 			throw new IllegalArgumentException("No products found with the product id: "+ productId);
 		}
 		return productById;
+	}
+
+
+
+
+	/**
+	 * Returns list of products by category
+	 * @param String category
+	 */
+	public List<Product> getProductsByCategory(String category) 
+	{
+		List<Product> productsByCategory = new ArrayList<Product>();
+		
+		for(Product product: listOfProducts)
+		{
+			if(category.equalsIgnoreCase(product.getCategory()))
+			   {
+				productsByCategory.add(product);
+			   }
+		}
+		return productsByCategory;
 	}
 	
 }

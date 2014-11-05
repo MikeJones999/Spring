@@ -20,4 +20,13 @@ public interface ProductRepository
 	 */
 	Product getProductById(String productId);
 	
+	
+	/**
+	 * Returns Products by Category
+	 * Using URI template patterns - can return certain category of product
+	 * @param category
+	 * @return
+	 */
+	List<Product> getProductsByCategory(String category);
+	
 }

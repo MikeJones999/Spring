@@ -5,7 +5,60 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-11-04T12:53:00Z</updated>
+  <updated>2014-11-05T13:43:00Z</updated>
+  <entry>
+    <title>Spring Cloud 1.0.0.M2 Available Now</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/05/spring-cloud-1-0-0-m2-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Dave Syer</name>
+    </author>
+    <id>tag:spring.io,2014-11-05:1811</id>
+    <updated>2014-11-05T13:43:00Z</updated>
+    <content type="html">&lt;p&gt;If you are building microservices with Spring you will be interested
+to see that &lt;a href="http://projects.spring.io/spring-cloud"&gt;Spring Cloud&lt;/a&gt;
+1.0.0.M2 hit the streets yesterday and today, and can now be found in
+the Spring &lt;a href="http://repo.spring.io"&gt;repository&lt;/a&gt;. Visit the individual
+project pages links in the main
+&lt;a href="http://projects.spring.io/spring-cloud"&gt;umbrella page&lt;/a&gt; or look at
+their &lt;a href="https://github.com/spring-cloud"&gt;github repositories&lt;/a&gt; for
+detailed instructions about how to get started using the individual
+components. There is also a
+&lt;a href="http://projects.spring.io/spring-cloud/spring-cloud.html"&gt;Reference Guide&lt;/a&gt;
+covering the core modules.&lt;/p&gt;
+
+&lt;p&gt;Since Spring Cloud is an umbrella project we have a "release train" of
+related updates to all the sub-projects (like with Spring Data). The
+1.0.0.M2 release has updates to
+&lt;a href="http://cloud.spring.io/spring-cloud-config/"&gt;spring Cloud Config&lt;/a&gt;,
+&lt;a href="http://cloud.spring.io/spring-cloud-netflix/"&gt;Spring Cloud Netflix&lt;/a&gt;,
+&lt;a href="http://cloud.spring.io/spring-cloud-bus/"&gt;Spring Cloud Bus&lt;/a&gt;,
+&lt;a href="http://cloud.spring.io/spring-cloud-security/"&gt;Spring Cloud Security&lt;/a&gt;
+and &lt;a href="http://cloud.spring.io/spring-cloud-cli/"&gt;Spring Cloud CLI&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There is also a new member of the family, so a warm welcome welcome
+please for
+&lt;a href="http://cloud.spring.io/spring-cloud-aws/"&gt;Spring Cloud for Amazon Web Services&lt;/a&gt;.
+This toolkit eases the integration with hosted Amazon Web Services. It
+offers a convenient way to interact with AWS provided services using
+well-known Spring idioms and APIs, such as the messaging or caching
+API. Developers can build their application around the hosted services
+without having to care about infrastructure or maintenance. It has
+been contributed by our friends at &lt;a href="http://mimacom.com"&gt;Mimacom AG&lt;/a&gt;,
+and we expect to be working closely with them as Spring Cloud moves
+towards its first umbrella release.&lt;/p&gt;
+
+&lt;p&gt;There are plenty of samples, including the demos from recent webinars
+and conferences, in the separate
+&lt;a href="https://github.com/spring-cloud-samples"&gt;spring-cloud-samples&lt;/a&gt;
+organization at GitHub. In particular there is a "scripts" aggregator
+project which has git submodules for all the samples and libraries, and
+there is a 1.0.0.M2 branch if you want to play with them using a stable
+binary build. In the scripts project you will also find a load of
+Groovy CLI applications in a "demo" folder, and shell scripts for
+building and running locally, and for deploying the apps to Cloud
+Foundry.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring  - November 4th, 2014</title>
     <link rel="alternate" href="https://spring.io/blog/2014/11/04/this-week-in-spring-november-4th-2014" />
@@ -1542,176 +1595,6 @@ This week I'm talking to developers at the Neo4j &lt;b&gt; GraphConnect&lt;/b&gt
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;To report bugs, follow the development of Reactor 2.0, read the wiki, or otherwise get involved in the Reactor community, visit the GitHub home of Reactor at &lt;a href="https://github.com/reactor/reactor"&gt;https://github.com/reactor/reactor&lt;/a&gt;. You can also read the JavaDoc online here: &lt;a href="http://reactor.github.io/docs/api/2.0.0.M1/index.html"&gt;http://reactor.github.io/docs/api/2.0.0.M1/index.html&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Whats new in Spring Data Evans?</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/10/15/whats-new-in-spring-data-evans" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Christoph Strobl</name>
-    </author>
-    <id>tag:spring.io,2014-09-17:1764</id>
-    <updated>2014-10-15T13:20:00Z</updated>
-    <content type="html">&lt;p&gt;Spring Data Release &lt;a href="https://spring.io/blog/2014/09/09/spring-data-release-train-evans-goes-ga"&gt;Evans&lt;/a&gt; has been around for a while and it's more than time to finally introduce you to the latest and greatest features we shipped with it.&lt;/p&gt;
-
-&lt;p&gt;There's a lot to cover since major enhancements have gone into the commons module. Those changes already have made it into some store modules and will go on and sneak their way into others over time, too. All of them are already available for at least &lt;a href="http://projects.spring.io/spring-data-jpa/"&gt;Spring Data JPA&lt;/a&gt;. That said, lets jump right in.&lt;/p&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-advanced-support-for-java-8" class="anchor" href="#advanced-support-for-java-8" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Advanced support for Java 8&lt;/h2&gt;
-
-&lt;p&gt;Java8 has now been around for a while and previous Spring Data release trains already added fundamental support for some of those. With the Evans release train we extended the support significantly.&lt;/p&gt;
-
-&lt;p&gt;Java 8's &lt;a href="http://docs.oracle.com/javase/8/docs/api/java/util/Optional.html"&gt;&lt;code&gt;Optional&lt;/code&gt;&lt;/a&gt; has been a supported return since the &lt;a href="https://spring.io/blog/2014/05/21/what-s-new-in-spring-data-dijkstra"&gt;Dijkstra release&lt;/a&gt; freeing you of having &lt;code&gt;null&lt;/code&gt; checks spread across your code. We simply wrap and unwrap values for you when used as return types with repositories.&lt;/p&gt;
-
-&lt;p&gt;As of the Evans release &lt;a href="http://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html"&gt;default methods&lt;/a&gt; can be used in repository interfaces to e.g. forward parts of the parameters handed into the method to other query methods.&lt;/p&gt;
-
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;PersonRepository&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;Repository&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Person&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Long&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-
-  &lt;span class="n"&gt;Optional&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Customer&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nf"&gt;findByLastname&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;lastname&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-
-  &lt;span class="k"&gt;default&lt;/span&gt; &lt;span class="n"&gt;Optional&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Customer&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nf"&gt;findByLastname&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Customer&lt;/span&gt; &lt;span class="n"&gt;customer&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nf"&gt;findByLastname&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;customer&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;customer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getLastname&lt;/span&gt;&lt;span class="o"&gt;());&lt;/span&gt;
-  &lt;span class="o"&gt;}&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-enhanced-multi-store-support" class="anchor" href="#enhanced-multi-store-support" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Enhanced multi-store support&lt;/h2&gt;
-
-&lt;p&gt;Configuring your application to make use of different Spring Data modules has not been without issues so far. E.g. you  might want to combine JPA and MongoDB where &lt;code&gt;Customer&lt;/code&gt; happens to be a JPA Entity while &lt;code&gt;Order&lt;/code&gt; is a MongoDB Document both persisted via according repository interfaces.&lt;/p&gt;
-
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Entity&lt;/span&gt;
-&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Customer&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-
-  &lt;span class="nd"&gt;@Id&lt;/span&gt; &lt;span class="nd"&gt;@GeneratedValue&lt;/span&gt; &lt;span class="n"&gt;Long&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;firstname&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lastname&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="c1"&gt;// ...&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-
-&lt;span class="nd"&gt;@Document&lt;/span&gt;
-&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Order&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-
-  &lt;span class="nd"&gt;@Id&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="n"&gt;Long&lt;/span&gt; &lt;span class="n"&gt;customerId&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="n"&gt;Date&lt;/span&gt; &lt;span class="n"&gt;orderDate&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="c1"&gt;// ...&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;CustomerRepository&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;CrudRepository&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Customer&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Long&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;{}&lt;/span&gt;
-
-&lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;OrderRepository&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;CrudRepository&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Order&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;{}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Until the Spring Data Evans release you had to manually configure the repository setup for MongoDB and JPA to mutually exclude the interfaces not relevant for the given store. Users usually used separate packages for that.&lt;/p&gt;
-
-&lt;p&gt;Now the repository setup detects that multiple Spring Data modules are on the classpath,  and automatically restricts the repository scanning and inspect the domain type used by a given repository for store specific annotations such as &lt;code&gt;@Entity&lt;/code&gt; and &lt;code&gt;@Document&lt;/code&gt; to determine the concrete implementation they belong to. E.g. the Spring Data MongoDB module would drop the (accidentally) detected &lt;code&gt;CustomerRepository&lt;/code&gt; as we don't find an &lt;code&gt;@Document&lt;/code&gt; annotation.&lt;/p&gt;
-
-&lt;h3&gt;
-&lt;a name="user-content-statically-limiting-results" class="anchor" href="#statically-limiting-results" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Statically limiting results&lt;/h3&gt;
-
-&lt;p&gt;Dynamically limiting results is no new concept since Spring Data has had &lt;code&gt;Pagable&lt;/code&gt; as abstraction since its inception and I bet nearly every Spring Data user is already familiar with something like this:&lt;/p&gt;
-
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Person&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nf"&gt;findByLastname&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;lastname&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Pageable&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This method declaration provides quite some flexibility: clients define the page number, size and a sort order of the elements they want to access. This is great if these values change dynamically (e.g. when you traverse the result set page by page).&lt;/p&gt;
-
-&lt;p&gt;But what if you're always only interested in e.g. the first 10 results and you always want them to be ordered by lastname? This could've been achieved by statically defining a &lt;code&gt;PageRequest&lt;/code&gt; and reusing that for every method invocation. However, that still required the client to hand in the special &lt;code&gt;PageRequest&lt;/code&gt;. &lt;/p&gt;
-
-&lt;p&gt;As of Spring Data Evans we now offer you a convenient way to explicitly limit the result set to a certain number of elements by using the keywords &lt;code&gt;top&lt;/code&gt; and &lt;code&gt;first&lt;/code&gt; followed by an optional positive numeric value (defaulting to 1).&lt;/p&gt;
-
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Person&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nf"&gt;findTop10ByLastnameOrderByFirstnameDesc&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;lastname&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-mongodb-full-text-search" class="anchor" href="#mongodb-full-text-search" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;MongoDB Full Text Search&lt;/h2&gt;
-
-&lt;p&gt;The Evans RC1 release introduced basic &lt;a href="https://spring.io/blog/2014/07/17/text-search-your-documents-with-spring-data-mongodb"&gt;text index support&lt;/a&gt; for MongoDB 2.6. Using &lt;code&gt;@TextIndexed&lt;/code&gt; allows you to mark properties you want to have text search enabled for so that we can go on and create the index for you. Note, that placing &lt;code&gt;@TextIndexed&lt;/code&gt; on properties referring to complex types will index all properties of that type. Since scoring is a fundamental part of full text search the &lt;code&gt;@TextScore&lt;/code&gt; annotation will assert that any full text query returns the documents score allowing you to order them by relevance.&lt;/p&gt;
-
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Document&lt;/span&gt;
-&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;BlogPost&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-
-  &lt;span class="nd"&gt;@Id&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="nd"&gt;@TextIndexed&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;weight&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="nd"&gt;@TextIndexed&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;weight&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="nd"&gt;@TextIndexed&lt;/span&gt; &lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="nd"&gt;@TextScore&lt;/span&gt; &lt;span class="n"&gt;Float&lt;/span&gt; &lt;span class="n"&gt;score&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;That in place, we extended the repository support to accept a &lt;code&gt;TextCriteria&lt;/code&gt; instance that will define detailed options about the text search that shall be executed: the terms to be searched for, language options etc.&lt;/p&gt;
-
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;BlogPostRepository&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;CrudRepository&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;BlogPost&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-
-    &lt;span class="n"&gt;Page&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;BlogPost&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nf"&gt;findBy&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TextCriteria&lt;/span&gt; &lt;span class="n"&gt;criteria&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Pageable&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-
-    &lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;BlogPost&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nf"&gt;findAllByOrderByScoreDesc&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TextCriteria&lt;/span&gt; &lt;span class="n"&gt;criteria&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The first query method is quite straight forward. It executes the given &lt;code&gt;TextCriteria&lt;/code&gt; and pages the results. The second query method definition combines the given &lt;code&gt;TextCriteria&lt;/code&gt; with a standard criteria definition derived from the method name. This shows that you can freely combine text search with standard query easily.&lt;/p&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-mongodb-query-modifiers" class="anchor" href="#mongodb-query-modifiers" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;MongoDB query modifiers&lt;/h2&gt;
-
-&lt;p&gt;We added &lt;code&gt;@Meta&lt;/code&gt; allowing you to define output and behavior of a query. By setting e.g. &lt;code&gt;maxExecutionTime&lt;/code&gt; one can define the maximum duration a query may take (in milliseconds). Any execution that exceeds the limit will result in an error. You can also advice MongoDB to only scan through a maximum number of documents and return what has been found until reaching the limit by setting &lt;code&gt;maxScanDocuments&lt;/code&gt;, while &lt;code&gt;comment&lt;/code&gt; allows you to define text you can search for within the &lt;code&gt;system.profile&lt;/code&gt; collection in case you got profiling enabled for your MongoDB instance. &lt;/p&gt;
-
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Meta&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;maxExcecutionTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;comment&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"onlyLimitedTime"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Customer&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nf"&gt;findByFirstname&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;firstname&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-configuration-options-for-redis-sentinel" class="anchor" href="#configuration-options-for-redis-sentinel" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Configuration options for Redis Sentinel&lt;/h2&gt;
-
-&lt;p&gt;Redis 2.8 introduced high-availability support know as &lt;a href="http://redis.io/topics/sentinel"&gt;Sentinels&lt;/a&gt;. The Redis module of Spring Data Evans adds support to easily configure connecting to a sentinel setup so that your client will be able to continue working in case of re-elections of master nodes in a Redis cluster.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;RedisSentinelConfiguration&lt;/code&gt; defines where the Sentiels are located so that the &lt;code&gt;ConnectionFactory&lt;/code&gt; can set up pooling accordingly. In case of Jedis it will create a &lt;code&gt;JedisSentinelPool&lt;/code&gt; for automatic failover. This means that in case your master node goes down, you'll receive, as soon as the Sentinels agreed on a new master,  a connection to the new master without the need of any further interaction. &lt;/p&gt;
-
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Configuration&lt;/span&gt;
-&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;RedisSentinelApplicationConfig&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-
-  &lt;span class="nd"&gt;@Bean&lt;/span&gt;
-  &lt;span class="n"&gt;RedisConnectionFactory&lt;/span&gt; &lt;span class="nf"&gt;connectionFactory&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nf"&gt;JedisConnectionFactory&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sentinelConfig&lt;/span&gt;&lt;span class="o"&gt;());&lt;/span&gt;
-  &lt;span class="o"&gt;}&lt;/span&gt;
-
-  &lt;span class="nd"&gt;@Bean&lt;/span&gt;
-  &lt;span class="n"&gt;RedisSentinelConfiguration&lt;/span&gt; &lt;span class="nf"&gt;sentinelConfig&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nf"&gt;RedisSentinelConfiguration&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;master&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"mymaster"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-      &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sentinel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"localhost"&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;26379&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-      &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sentinel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"localhost"&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;26380&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-      &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sentinel&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"localhost"&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;26381&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-  &lt;span class="o"&gt;}&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The upcoming Spring Boot 1.2, will even take this even further by automatically picking up the &lt;code&gt;RedisSentinelConfiguration&lt;/code&gt; if present and initialize the &lt;code&gt;RedisConnectionFactory&lt;/code&gt; accordingly.&lt;/p&gt;
-
-&lt;h2&gt;
-&lt;a name="user-content-schema-support-for-solr" class="anchor" href="#schema-support-for-solr" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Schema support for Solr&lt;/h2&gt;
-
-&lt;p&gt;Although the &lt;a href="https://cwiki.apache.org/confluence/display/solr/Schema+API"&gt;Solr Schema API&lt;/a&gt; is not finished yet, we already try to support as much of it as possible. With the Evans release you can now dynamically add missing fields to an existing (managed) schema. To achieve this, we read the existing field definition and compare it against the one derived from the properties of the domain type. To do so we extended the &lt;code&gt;@Indexed&lt;/code&gt; annotation a bit. It now allows some fine tuning of the fields to be created as values such as &lt;code&gt;indexed&lt;/code&gt;, &lt;code&gt;stored&lt;/code&gt; and &lt;code&gt;solrType&lt;/code&gt; can be explicitly defined.&lt;/p&gt;
-
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@Configuration&lt;/span&gt;
-&lt;span class="nd"&gt;@EnableSolrRepositories&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;schemaCreationSupport&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;SolrConfiguration&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-
-  &lt;span class="nd"&gt;@Bean&lt;/span&gt;
-  &lt;span class="n"&gt;SolrServer&lt;/span&gt; &lt;span class="nf"&gt;solrServer&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nf"&gt;HttpSolrServer&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"http://localhost:8983/solr"&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-  &lt;span class="o"&gt;}&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-
-&lt;span class="nd"&gt;@SolrDocument&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;solrCoreName&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"collection1"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ManagedProduct&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-
-  &lt;span class="nd"&gt;@Id&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="nd"&gt;@Indexed&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"text_general"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="nd"&gt;@Indexed&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"cat"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;As always we are eager to hear from you! Reach out to us on &lt;a href="https://twitter.com/SpringData"&gt;Twitter&lt;/a&gt;, &lt;a href="http://stackoverflow.com/tags/spring-data"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="http://jira.spring.io"&gt;JIRA&lt;/a&gt; to request new features, suggest improvements or report a bug.&lt;/p&gt;</content>
   </entry>
 </feed>
 
