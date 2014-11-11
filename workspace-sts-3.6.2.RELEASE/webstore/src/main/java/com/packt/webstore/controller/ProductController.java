@@ -1,10 +1,15 @@
 package com.packt.webstore.controller;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.MatrixVariable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.packt.webstore.domain.Product;
 import com.packt.webstore.domain.repository.ProductRepository;
@@ -86,6 +91,45 @@ public class ProductController
 		return "products";
 	}
 	
+	
+	
+	//can search using this 
+	//http://localhost:8080/webstore/products/filter/ByCategory;brand=google;brand=dell;category=tablet;category=laptop
+	
+	//returns all those brands matching...which are of category....
+	
+	/*
+	 * Spring MVC will read all the matrix variables found in the URL after the {ByCriteria}
+		URI template and place those matrix variables into the map of the method parameter
+		filterParams. The filterParams map will have each matrix variable name as key and
+		the corresponding list will contain the multiple values assigned for the matrix variable. The
+		pathVar attribute from the @MatrixVariable annotation is used to identify the matrix
+		variable segment in the URL; that's why it has the value ByCriteria, which is nothing but
+		the URI template value that we used in our request mapping URL.
+	 */
+	
+	@RequestMapping("/filter/{ByCriteria}")
+	public String getProductsByFilter(@MatrixVariable(pathVar= "ByCriteria") Map<String, List<String>> filterParams, Model model)
+	{
+		model.addAttribute("products", productService.getProductByFilter(filterParams));
+		return "products";
+	}
+	
+	/*
+	 we annotated the parameter	productId with the @RequestParam("id") annotation (org.springframework.web.bind.annotation.RequestParam),
+	 Spring MVC will try to read a GET request parameter
+	 with the name id from the URL and assign it to the getProductById method parameter,
+     productId.
+	 */
+	
+	// product singular - not productS
+	@RequestMapping("/product")
+	public String getProductById(@RequestParam("id") String productId, Model model)
+	{
+		model.addAttribute("product", productService.getProductById(productId));
+		return "product";
+		
+	}
 }
 
 
