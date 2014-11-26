@@ -39,4 +39,18 @@ public interface ProductRepository
 	 * Duplicates removed
 	 */
 	Set<Product> getProductByFilter(Map<String, List<String>> filterParams);
+	
+	
+	/**
+	 * return all the products based on manufacturer.
+	 */
+	List<Product> getProductByManufacturer(String manufacturer);
+	
+	
+	/**
+	 * Adds a new products to the library
+	 */
+	void addProduct(Product product);
+	
+	
 }

@@ -44,5 +44,19 @@ public class ProductServiceImpl implements ProductService
 		
 		return productRepository.getProductByFilter(filterParams);
 	}
+	
+	
+	public List<Product> getProductByManufacturer(String manufacturer)
+	{
+		
+		return productRepository.getProductByManufacturer(manufacturer);
+	}
+	
+	
+	public void addProduct(Product product)
+	{
+		productRepository.addProduct(product);
+	}
+	
 
 }

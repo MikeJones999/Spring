@@ -1,3 +1,5 @@
+
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
@@ -25,8 +27,7 @@
 						<strong>Item Code : </strong><span class="label label-warning">${product.productId}</span>
 						</p>
 						<p>
-						<strong>manufacturer</strong> :
-						${product.manufacturer}
+						<strong>manufacturer</strong> :	${product.manufacturer}
 						</p>
 						<p>
 						<strong>category</strong> : ${product.category}
@@ -35,9 +36,19 @@
 						<strong>Available units in stock </strong> :
 						${product.unitsInStock}
 						</p>
-						<h4>${product.unitPrice} USD</h4>
-						<p>
-						<a href="#" class="btn btn-warning btn-large"> <span class="glyphicon-shopping-cart glyphicon">
+			
+						
+						<h4>${product.unitPrice} USD</h4>						
+						<p>	
+					
+						<a href="<spring:url value="/products" />" class="btn btndefault">
+						<span class="glyphicon-hand-left glyphicon"></span> back
+						</a>
+						
+						<%-- COMMENT...span tag is just for styling the button with the icon, --%>
+													
+						<a href="#" class="btn btn-warning btn-large"> 
+						<span class="glyphicon-shopping-cart glyphicon">
 						</span> Order Now
 						</a>
 						</p>

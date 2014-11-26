@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 	<head>
@@ -29,6 +30,23 @@
 							<p>${product.description}</p>
 							<p>$${product.unitPrice}</p>
 							<p>Available ${product.unitsInStock} units in stock</p>
+								
+								
+									<%-- COMMENT...
+									hyperlink added Titled "Details"									
+									<spring:url> tag is used to construct a valid Spring URL
+									For the id URL parameter, we assigned the expression ${product.productId}.
+									Spring MVC will assign the corresponding product ID in that expression
+									Then render the new URL
+									<spring:url> = /products/product?id=P1234
+									therefore this URL = the request mapping path of the product details page
+									  --%>		
+									<p>
+										<a href=" <spring:url value="/products/product?id=${product.productId}" /> " class="btn btn-primary">
+										<span class="glyphicon-info-sign glyphicon"/></span> Details
+										</a>
+									</p>
+							
 						</div>
 						</div>
 					</div>

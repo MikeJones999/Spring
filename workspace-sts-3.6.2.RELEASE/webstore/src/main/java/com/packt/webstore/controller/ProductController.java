@@ -6,9 +6,15 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.MatrixVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.packt.webstore.domain.Product;
@@ -92,6 +98,24 @@ public class ProductController
 	}
 	
 	
+	/*
+	@RequestMapping("/{manufacturer}")
+	public String getProductsByManufacturer(Model model, @PathVariable("manufacturer") String productManufacturer)
+	//filterProducts
+	{
+		//@PathVariable annotation will help us read that variable
+		//Spring MVC will read whatever value is present in the category URI template variable 
+		//and assign it to the method parameter productCategory
+		//we now have the category value in a variable, 
+		//and we just pass it to productService to get the list of products in that	category
+		//Once we get that list of products, we simply add it to the model and return the
+		//same view name that we have used to list all the products
+		
+		model.addAttribute("products", productService.getProductByManufacturer(productManufacturer));
+		return "products";
+	}
+	*/
+	
 	
 	//can search using this 
 	//http://localhost:8080/webstore/products/filter/ByCategory;brand=google;brand=dell;category=tablet;category=laptop
@@ -118,18 +142,69 @@ public class ProductController
 	/*
 	 we annotated the parameter	productId with the @RequestParam("id") annotation (org.springframework.web.bind.annotation.RequestParam),
 	 Spring MVC will try to read a GET request parameter
-	 with the name id from the URL and assign it to the getProductById method parameter,
-     productId.
+	 with the name id from the URL and assign it to the getProductById method parameter, productId.
 	 */
 	
-	// product singular - not productS
+	// product singular - not productS - dipslays one product by its productid - whole new page
+	//utilises the product.jsp to display the page using the specified id
 	@RequestMapping("/product")
 	public String getProductById(@RequestParam("id") String productId, Model model)
 	{
 		model.addAttribute("product", productService.getProductById(productId));
-		return "product";
-		
+		return "product";		
 	}
+	
+	
+	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	public String getNewProductForm(Model model)
+	{
+		Product newProduct = new Product();
+		model.addAttribute("newProduct", newProduct);
+		return "addProduct";
+	}
+	
+	
+	/*
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public String processAddNewProductForm(@ModelAttribute("newProduct") Product newProduct)
+	{
+		productService.addProduct(newProduct);		
+		
+		// instruct Spring to issue a redirect request to the request path, /products, which is the request path
+		// for the list method of our ProductController class. So, after submitting the form, we
+		// list the products using the list method of ProductController.
+		
+		return "redirect:/products";
+	}
+	*/	
+
+	//changed to this with whitelising
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public String processAddNewProductForm(@ModelAttribute("newProduct") Product productToBeAdded, BindingResult result)
+	{
+		String[] suppressedFields = result.getSuppressedFields();
+		if (suppressedFields.length > 0)
+		{
+			throw new RuntimeException("Attempting to bind dissallowed fields: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
+		}
+		
+		productService.addProduct(productToBeAdded);	
+	
+		return "redirect:/products";
+	}
+	
+	/**
+	 * Whitelisting form fields that are not required
+	 */
+	@InitBinder
+	public void initialiseBinder(WebDataBinder binder)
+	{
+		binder.setDisallowedFields("unitsInOrder", "discontinued");
+	}
+	
+	
+	
+	
 }
 
 
